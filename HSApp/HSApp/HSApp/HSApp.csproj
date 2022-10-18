@@ -82,11 +82,11 @@
       <DependentUpon>Courses.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManager.cs" />
-    <Compile Include="Addresses.cs">
+    <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Addresses.Designer.cs">
-      <DependentUpon>Addresses.cs</DependentUpon>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Enrollments.cs">
       <SubType>Form</SubType>
@@ -121,8 +121,8 @@
     <Compile Include="Teachers.Designer.cs">
       <DependentUpon>Teachers.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Addresses.resx">
-      <DependentUpon>Addresses.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

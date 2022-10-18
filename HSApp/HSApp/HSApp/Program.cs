@@ -16,7 +16,7 @@ namespace HSApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Addresses());
+            Application.Run(new MainMenu());
         }
     }
 }
