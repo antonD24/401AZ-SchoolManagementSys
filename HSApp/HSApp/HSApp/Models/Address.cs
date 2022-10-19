@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HSApp.Models
 {
-    public abstract class Address
+    public class Address
     {
         public int AddressID { get; set; }
         public string Address1 { get; set; }

@@ -23,6 +23,8 @@ namespace HSApp
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
         }
+
+        
     }
 
 }

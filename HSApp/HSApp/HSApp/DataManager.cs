@@ -11,12 +11,9 @@ using System.Windows.Forms;
 
 namespace HSApp
 {
-    internal class DataManager
+    public class DataManager
     {
-        List<Address> Addresses;
-        
-        
-        public DataTable toDataTable<T>(List<T> Addresses)
+         public DataTable toDataTable<T>(List<T> items)
         {
             DataTable dataTable = new DataTable(typeof(T).Name);
             PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
@@ -24,12 +21,12 @@ namespace HSApp
             {
                 dataTable.Columns.Add(prop.Name);
             }
-            foreach (T Address in Addresses)
+            foreach (T item in items)
             {
                 var values = new Object[Props.Length];
                 for(int i = 0; i < Props.Length; i++)
                 {
-                    values[i] = Props[i].GetValue(Address, null);
+                    values[i] = Props[i].GetValue(item, null);
                 }
                 dataTable.Rows.Add(values);
             }
