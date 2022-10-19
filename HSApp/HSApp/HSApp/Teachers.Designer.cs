@@ -68,7 +68,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(793, 285);
+            this.button6.Location = new System.Drawing.Point(806, 285);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 66;
@@ -268,8 +268,6 @@
             this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 45;
             this.label1.Text = "Teacher ID:";
-
-
             // 
             // dateTimePicker1
             // 
