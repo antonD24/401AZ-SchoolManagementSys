@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Addresses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Addresses.Designer.cs">
+      <DependentUpon>Addresses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <Compile Include="Teachers.Designer.cs">
       <DependentUpon>Teachers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Addresses.resx">
+      <DependentUpon>Addresses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Class.resx">
       <DependentUpon>Class.cs</DependentUpon>
     </EmbeddedResource>
