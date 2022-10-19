@@ -15,6 +15,17 @@ namespace HSApp
         public Addresses()
         {
             InitializeComponent();
+
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Show();
         }
     }
+
 }
+
+        
+    

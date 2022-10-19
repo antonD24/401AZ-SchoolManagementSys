@@ -27,3 +27,5 @@ C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.MainMenu
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Class.resources
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Enrollments.resources
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Addresses.resources
+C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Students.resources
+C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Teachers.resources

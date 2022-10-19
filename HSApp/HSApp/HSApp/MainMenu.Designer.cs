@@ -28,111 +28,118 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnStudent = new System.Windows.Forms.Button();
+            this.btnCourses = new System.Windows.Forms.Button();
+            this.btnAddresses = new System.Windows.Forms.Button();
+            this.btnTeachers = new System.Windows.Forms.Button();
+            this.btnSubjects = new System.Windows.Forms.Button();
+            this.btnClasses = new System.Windows.Forms.Button();
+            this.btnEnrollments = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnStudent
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button1.Location = new System.Drawing.Point(12, 282);
-            this.button1.MaximumSize = new System.Drawing.Size(150, 30);
-            this.button1.MinimumSize = new System.Drawing.Size(150, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnStudent.Location = new System.Drawing.Point(12, 282);
+            this.btnStudent.MaximumSize = new System.Drawing.Size(150, 30);
+            this.btnStudent.MinimumSize = new System.Drawing.Size(150, 30);
+            this.btnStudent.Name = "btnStudent";
+            this.btnStudent.Size = new System.Drawing.Size(150, 30);
+            this.btnStudent.TabIndex = 0;
+            this.btnStudent.Text = "Students";
+            this.btnStudent.UseVisualStyleBackColor = true;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
-            // button2
+            // btnCourses
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button2.Location = new System.Drawing.Point(12, 330);
-            this.button2.MaximumSize = new System.Drawing.Size(150, 30);
-            this.button2.MinimumSize = new System.Drawing.Size(150, 30);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnCourses.Location = new System.Drawing.Point(12, 330);
+            this.btnCourses.MaximumSize = new System.Drawing.Size(150, 30);
+            this.btnCourses.MinimumSize = new System.Drawing.Size(150, 30);
+            this.btnCourses.Name = "btnCourses";
+            this.btnCourses.Size = new System.Drawing.Size(150, 30);
+            this.btnCourses.TabIndex = 1;
+            this.btnCourses.Text = "Courses";
+            this.btnCourses.UseVisualStyleBackColor = true;
+            this.btnCourses.Click += new System.EventHandler(this.btnCourses_Click);
             // 
-            // button3
+            // btnAddresses
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(12, 375);
-            this.button3.MaximumSize = new System.Drawing.Size(150, 30);
-            this.button3.MinimumSize = new System.Drawing.Size(150, 30);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAddresses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAddresses.Location = new System.Drawing.Point(12, 375);
+            this.btnAddresses.MaximumSize = new System.Drawing.Size(150, 30);
+            this.btnAddresses.MinimumSize = new System.Drawing.Size(150, 30);
+            this.btnAddresses.Name = "btnAddresses";
+            this.btnAddresses.Size = new System.Drawing.Size(150, 30);
+            this.btnAddresses.TabIndex = 2;
+            this.btnAddresses.Text = "Addresses";
+            this.btnAddresses.UseVisualStyleBackColor = true;
+            this.btnAddresses.Click += new System.EventHandler(this.btnAddresses_Click);
             // 
-            // button4
+            // btnTeachers
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(222, 282);
-            this.button4.MaximumSize = new System.Drawing.Size(150, 30);
-            this.button4.MinimumSize = new System.Drawing.Size(150, 30);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 30);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnTeachers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnTeachers.Location = new System.Drawing.Point(222, 282);
+            this.btnTeachers.MaximumSize = new System.Drawing.Size(150, 30);
+            this.btnTeachers.MinimumSize = new System.Drawing.Size(150, 30);
+            this.btnTeachers.Name = "btnTeachers";
+            this.btnTeachers.Size = new System.Drawing.Size(150, 30);
+            this.btnTeachers.TabIndex = 3;
+            this.btnTeachers.Text = "Teachers";
+            this.btnTeachers.UseVisualStyleBackColor = true;
+            this.btnTeachers.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // btnSubjects
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button5.Location = new System.Drawing.Point(222, 330);
-            this.button5.MaximumSize = new System.Drawing.Size(150, 30);
-            this.button5.MinimumSize = new System.Drawing.Size(150, 30);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 30);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSubjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSubjects.Location = new System.Drawing.Point(222, 330);
+            this.btnSubjects.MaximumSize = new System.Drawing.Size(150, 30);
+            this.btnSubjects.MinimumSize = new System.Drawing.Size(150, 30);
+            this.btnSubjects.Name = "btnSubjects";
+            this.btnSubjects.Size = new System.Drawing.Size(150, 30);
+            this.btnSubjects.TabIndex = 4;
+            this.btnSubjects.Text = "Subjects";
+            this.btnSubjects.UseVisualStyleBackColor = true;
+            this.btnSubjects.Click += new System.EventHandler(this.btnSubjects_Click);
             // 
-            // button6
+            // btnClasses
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button6.Location = new System.Drawing.Point(222, 375);
-            this.button6.MaximumSize = new System.Drawing.Size(150, 30);
-            this.button6.MinimumSize = new System.Drawing.Size(150, 30);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 30);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnClasses.Location = new System.Drawing.Point(222, 375);
+            this.btnClasses.MaximumSize = new System.Drawing.Size(150, 30);
+            this.btnClasses.MinimumSize = new System.Drawing.Size(150, 30);
+            this.btnClasses.Name = "btnClasses";
+            this.btnClasses.Size = new System.Drawing.Size(150, 30);
+            this.btnClasses.TabIndex = 5;
+            this.btnClasses.Text = "Classes";
+            this.btnClasses.UseVisualStyleBackColor = true;
+            this.btnClasses.Click += new System.EventHandler(this.btnClasses_Click);
             // 
-            // button7
+            // btnEnrollments
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button7.Location = new System.Drawing.Point(116, 411);
-            this.button7.MaximumSize = new System.Drawing.Size(150, 30);
-            this.button7.MinimumSize = new System.Drawing.Size(150, 30);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 30);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnEnrollments.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEnrollments.Location = new System.Drawing.Point(116, 411);
+            this.btnEnrollments.MaximumSize = new System.Drawing.Size(150, 30);
+            this.btnEnrollments.MinimumSize = new System.Drawing.Size(150, 30);
+            this.btnEnrollments.Name = "btnEnrollments";
+            this.btnEnrollments.Size = new System.Drawing.Size(150, 30);
+            this.btnEnrollments.TabIndex = 6;
+            this.btnEnrollments.Text = "Enrollments";
+            this.btnEnrollments.UseVisualStyleBackColor = true;
+            this.btnEnrollments.Click += new System.EventHandler(this.btnEnrollments_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 11F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 451);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEnrollments);
+            this.Controls.Add(this.btnClasses);
+            this.Controls.Add(this.btnSubjects);
+            this.Controls.Add(this.btnTeachers);
+            this.Controls.Add(this.btnAddresses);
+            this.Controls.Add(this.btnCourses);
+            this.Controls.Add(this.btnStudent);
             this.Font = new System.Drawing.Font("MS Outlook", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximumSize = new System.Drawing.Size(400, 490);
@@ -145,13 +152,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnStudent;
+        private System.Windows.Forms.Button btnCourses;
+        private System.Windows.Forms.Button btnAddresses;
+        private System.Windows.Forms.Button btnTeachers;
+        private System.Windows.Forms.Button btnSubjects;
+        private System.Windows.Forms.Button btnClasses;
+        private System.Windows.Forms.Button btnEnrollments;
     }
 }
 
