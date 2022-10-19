@@ -15,13 +15,28 @@ namespace HSApp
     {
         DataManager dm;
         Connector conn;
-        
-        
+
+
+
+
         public Addresses()
         {
             InitializeComponent();
             dm = new DataManager();
             conn = new Connector();
+        }
+        private void Addresses_Load(object sender, EventArgs e)
+        {
+
+            refreshData();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            refreshData();
+        }
+        private void refreshData()
+        {
+            dgvAddr.DataSource = dm.toDataTable(conn.getAddresses());
         }
 
 
@@ -31,11 +46,9 @@ namespace HSApp
             mainMenu.Show();
         }
 
-        private void Addresses_Load(object sender, EventArgs e)
-        {
-            
-            dgvAddr.DataSource = dm.toDataTable(conn.getAddresses();
-        }
+        
+
+         
     }
 
 }

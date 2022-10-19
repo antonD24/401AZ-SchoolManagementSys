@@ -13,7 +13,7 @@ namespace HSApp
     {
         private string connString = "Server= database401az.c24bjpnpsv1x.us-east-1.rds.amazonaws.com; User ID = admin; Password=02041957; Database=H_SEducateDB;";
 
-        List<Address> getAddresses()
+        public List<Address> getAddresses()
         {
             List<Address> addresses = new List<Address>();
             using (var conn = new MySqlConnection(connString))
@@ -35,6 +35,7 @@ namespace HSApp
                     }
             }
             return addresses;
+
         }
     }
 }

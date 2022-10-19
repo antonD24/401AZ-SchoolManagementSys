@@ -50,12 +50,15 @@
             // 
             // dgvAddr
             // 
+            this.dgvAddr.AllowUserToAddRows = false;
             this.dgvAddr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAddr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddr.Location = new System.Drawing.Point(354, 12);
             this.dgvAddr.Name = "dgvAddr";
+            this.dgvAddr.ReadOnly = true;
+            this.dgvAddr.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAddr.Size = new System.Drawing.Size(434, 571);
             this.dgvAddr.TabIndex = 0;
             // 
@@ -153,6 +156,7 @@
             this.button5.TabIndex = 15;
             this.button5.Text = "Refresh";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
             // 
