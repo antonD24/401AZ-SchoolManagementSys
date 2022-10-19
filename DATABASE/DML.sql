@@ -16,10 +16,10 @@ DELETE FROM tbl_Addresses WHERE Addr_id = 1;
 
 SELECT * FROM tbl_Students;
 
-SELECT tbl_Students.Student_id, tbl_Students.stu_FirstName, tbl_Students.stu_LastName, tbl_Students.stu_DOB, tbl_Students.stu_Gender, tbl_Students.Addr_id, tbl_Addresses.Address, tbl_Addresses.County, tbl_Addresses.City, tbl_Addresses.Postcode
+SELECT tbl_Students.Student_id, tbl_Students.stu_FirstName, tbl_Students.stu_LastName, tbl_Students.stu_DOB, tbl_Students.stu_Gender,tbl_Students.stu_Email,tbl_Students.stu_Phone, tbl_Students.Addr_id, tbl_Addresses.Address, tbl_Addresses.County, tbl_Addresses.City, tbl_Addresses.Postcode
 FROM tbl_Students INNER JOIN tbl_Addresses ON tbl_Students.Addr_id = tbl_Addresses.Addr_id WHERE Student_id = 1;
 
-INSERT INTO tbl_Students(stu_FirstName,stu_LastName,stu_DOB,stu_Gender,Addr_id) VALUES ("Amy", "Lane",'1995-2-3',"Female",3);
+INSERT INTO tbl_Students(stu_FirstName,stu_LastName,stu_DOB,stu_Gender,stu_Email,stu_Phone,Addr_id) VALUES ("Amy", "Lane",'1995-2-3',"Female","ac7247827@mail,com","075561721",3);
 
 UPDATE tbl_Students
 	SET
@@ -27,29 +27,33 @@ UPDATE tbl_Students
 		stu_LastName = "Stevens",
 		stu_DOB = '1998-2-1',
 		stu_Gender = "Male",
-		Addr_id = 3, 
+		stu_Email = "abc@yahoo.com",
+		stu_Phone = "0765678",
+		Addr_id = 3
 	WHERE Student_id = 2;
 	
 DELETE FROM tbl_Students WHERE Student_id = 1;
 
 SELECT * FROM tbl_Teachers;
 
-SELECT tbl_Teachers.Teacher_id, tbl_Teachers.FirstName, tbl_Teachers.LastName, tbl_Teachers.DOB, tbl_Teachers.Gender, tbl_Teachers.Addr_id, tbl_Addresses.Address, tbl_Addresses.County, tbl_Addresses.City, tbl_Addresses.Postcode
+SELECT tbl_Teachers.Teacher_id, tbl_Teachers.FirstName, tbl_Teachers.LastName, tbl_Teachers.DOB, tbl_Teachers.Gender,tbl_Teachers.Email,tbl_Teachers.Phone, tbl_Teachers.Addr_id, tbl_Addresses.Address, tbl_Addresses.County, tbl_Addresses.City, tbl_Addresses.Postcode
 FROM tbl_Teachers 
 INNER JOIN tbl_Addresses ON tbl_Teachers.Addr_id = tbl_Addresses.Addr_id;
 
 
 SELECT * FROM tbl_Teachers WHERE Teacher_id = 1;
 
-INSERT INTO tbl_Teachers(FirstName,LastName,DOB,Gender,Addr_id) VALUES ("Derek", "Smith",'1980-4-10',"Male",3);
+INSERT INTO tbl_Teachers(FirstName,LastName,DOB,Gender,Email,Phone,Addr_id) VALUES ("Derek", "Smith",'1980-4-10',"Male",3);
 
 UPDATE tbl_Teachers
 	SET
-		stu_FirstName = "Derek",
-		stu_LastName = "Smith",
-		stu_DOB = '1980-4-10',
-		stu_Gender = "Male",
-		Addr_id = 3, 
+		FirstName = "Derek",
+		LastName = "Smith",
+		DOB = '1980-4-10',
+		Gender = "Male",
+		Email = "ac363463@cov.ac.uk",
+		Phone = "0765435",
+		Addr_id = 3 
 	WHERE Teacher_id = 1;
 	
 DELETE FROM tbl_Teachers WHERE Teacher_id = 1;

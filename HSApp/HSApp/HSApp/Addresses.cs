@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HSApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,17 @@ namespace HSApp
 {
     public partial class Addresses : Form
     {
+        DataManager dm;
+        Connector conn;
+        
+        
         public Addresses()
         {
             InitializeComponent();
-
+            dm = new DataManager();
+            conn = new Connector();
         }
+
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -24,7 +31,11 @@ namespace HSApp
             mainMenu.Show();
         }
 
-        
+        private void Addresses_Load(object sender, EventArgs e)
+        {
+            
+            dgvAddr.DataSource = dm.toDataTable(conn.getAddresses();
+        }
     }
 
 }

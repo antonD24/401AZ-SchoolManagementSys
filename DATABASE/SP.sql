@@ -70,7 +70,7 @@ CALL sp_getStudents();
 DELIMITER //
 CREATE PROCEDURE sp_getStudent(id INT)
 BEGIN 
-	SELECT tbl_Students.Student_id, tbl_Students.stu_FirstName, tbl_Students.stu_LastName, tbl_Students.stu_DOB, tbl_Students.stu_Gender, tbl_Students.Addr_id, tbl_Addresses.Address, tbl_Addresses.County, tbl_Addresses.City, tbl_Addresses.Postcode
+	SELECT tbl_Students.Student_id, tbl_Students.stu_FirstName, tbl_Students.stu_LastName, tbl_Students.stu_DOB, tbl_Students.stu_Gender,tbl_Students.stu_Email,tbl_Students.stu_Phone ,tbl_Students.Addr_id, tbl_Addresses.Address, tbl_Addresses.County, tbl_Addresses.City, tbl_Addresses.Postcode
 	FROM tbl_Students INNER JOIN tbl_Addresses ON tbl_Students.Addr_id = tbl_Addresses.Addr_id WHERE Student_id = id;
 END//
 DELIMITER ;
@@ -78,19 +78,19 @@ DELIMITER ;
 CALL sp_getStudent(2);
 
 DELIMITER //
-CREATE PROCEDURE sp_InsertStudent(Sfname VARCHAR(20), Slname VARCHAR(20), SDOB DATE, Sgender VARCHAR(15), Saddr INT )
+CREATE PROCEDURE sp_InsertStudent(Sfname VARCHAR(20), Slname VARCHAR(20), SDOB DATE, Sgender VARCHAR(15),SEmail VARCHAR(40),SPhone VARCHAR(15) ,Saddr INT )
 
 BEGIN 
 	INSERT INTO tbl_Students (stu_FirstName,stu_LastName,stu_DOB,stu_Gender,Addr_id) VALUES (Sfname, Slname, SDOB, Sgender,Saddr);
 END//
 DELIMITER ;
 
-CALL sp_InsertStudent("Jake", "Smith",'2001-4-24', "Male", 3);
+CALL sp_InsertStudent("Jake", "Smith",'2001-4-24',"ac@gmail.com","07235352", "Male", 3);
 
 
 
 DELIMITER //
-CREATE PROCEDURE sp_UpdateStudents(id INT,Sfname VARCHAR(20), Slname VARCHAR(20), SDOB DATE, Sgender VARCHAR(15))
+CREATE PROCEDURE sp_UpdateStudents(id INT,Sfname VARCHAR(20), Slname VARCHAR(20), SDOB DATE, Sgender VARCHAR(15), SEmail VARCHAR(40), SPhone VARCHAR(15))
 
 BEGIN 
 	UPDATE tbl_Students
@@ -98,12 +98,14 @@ BEGIN
 		stu_FirstName = Sfname,
 		stu_LastName = Slname,
 		stu_DOB = SDOB,
-		stu_Gender = Sgender
+		stu_Gender = Sgender,
+		stu_Email = SEmail,
+		stu_Phone = SPhone
 	WHERE Student_id = id;
 END//
 DELIMITER ;
 
-CALL sp_UpdateAddress("adaasdd", "kagggldk","advareda", "adayukywaw",3);
+CALL sp_UpdateAddress("adaasdd", "kagggldk","advareda", "adayukywaw","ac@7678.com","07133899",3);
 
 DELIMITER //
 CREATE PROCEDURE sp_deleteStudent(id INT)
@@ -129,7 +131,7 @@ CALL sp_getTeachers();
 DELIMITER //
 CREATE PROCEDURE sp_getTeacher(id INT)
 BEGIN 
-	SELECT tbl_Teachers.Teacher_id, tbl_Teachers.FirstName, tbl_Teachers.LastName, tbl_Teachers.DOB, tbl_Teachers.Gender, tbl_Teachers.Addr_id, tbl_Addresses.Address, tbl_Addresses.County, tbl_Addresses.City, tbl_Addresses.Postcode
+	SELECT tbl_Teachers.Teacher_id, tbl_Teachers.FirstName, tbl_Teachers.LastName, tbl_Teachers.DOB, tbl_Teachers.Gender,tbl_Teachers.Email,tbl_Teachers.Phone, tbl_Teachers.Addr_id, tbl_Addresses.Address, tbl_Addresses.County, tbl_Addresses.City, tbl_Addresses.Postcode
 	FROM tbl_Teachers INNER JOIN tbl_Addresses ON tbl_Teachers.Addr_id = tbl_Addresses.Addr_id WHERE Teacher_id = id;
 END//
 DELIMITER ;
@@ -137,19 +139,19 @@ DELIMITER ;
 CALL sp_getTeacher(1);
 
 DELIMITER //
-CREATE PROCEDURE sp_InsertTeacher(Tfname VARCHAR(20), Tlname VARCHAR(20), TDOB DATE, Tgender VARCHAR(15), Taddr INT )
+CREATE PROCEDURE sp_InsertTeacher(Tfname VARCHAR(20), Tlname VARCHAR(20), TDOB DATE, Tgender VARCHAR(15),TEmail VARCHAR(40),TPhone VARCHAR(15), Taddr INT )
 
 BEGIN 
-	INSERT INTO tbl_Teachers (FirstName,LastName,DOB,Gender,Addr_id) VALUES (Tfname, Tlname, TDOB, Tgender,Taddr);
+	INSERT INTO tbl_Teachers (FirstName,LastName,DOB,Gender,Email,Phone,Addr_id) VALUES (Tfname, Tlname, TDOB, Tgender,TEmail,TPhone,Taddr);
 END//
 DELIMITER ;
 
-CALL sp_InsertTeacher("Jake", "Smith",'2001-4-24', "Male", 3);
+CALL sp_InsertTeacher("Jake", "Smith",'2001-4-24', "Male","bc@242342.com","071237675", 3);
 
 
 
 DELIMITER //
-CREATE PROCEDURE sp_UpdateTeacher(id INT,Tfname VARCHAR(20), Tlname VARCHAR(20), TDOB DATE, Tgender VARCHAR(15))
+CREATE PROCEDURE sp_UpdateTeacher(id INT,Tfname VARCHAR(20), Tlname VARCHAR(20), TDOB DATE, Tgender VARCHAR(15), TEmail VARCHAR(40), TPhone VARCHAR(15))
 
 BEGIN 
 	UPDATE tbl_Teachers
@@ -157,7 +159,9 @@ BEGIN
 		FirstName = Tfname,
 		LastName = Tlname,
 		DOB = TDOB,
-		Gender = Tgender
+		Gender = Tgender,
+		Email = TEmail,
+		Phone = TPhone
 	WHERE Teacher_id = id;
 END//
 DELIMITER ;

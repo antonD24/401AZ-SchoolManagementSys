@@ -15,6 +15,8 @@ CREATE TABLE tbl_Students (
 	stu_LastName VARCHAR(20) NOT NULL,
 	stu_DOB DATE NOT NULL,
 	stu_Gender VARCHAR(15) NOT NULL,
+	stu_Email VARCHAR(40) NOT NULL,
+	stu_Phone VARCHAR(15) NOT NULL,
 	Addr_id INT,
 	CONSTRAINT pk_Student PRIMARY KEY (Student_id),
 	CONSTRAINT fk_StudentAddr FOREIGN KEY (Addr_id) REFERENCES tbl_Addresses(Addr_id) ON UPDATE NO ACTION ON DELETE NO ACTION
@@ -27,6 +29,8 @@ CREATE TABLE tbl_Teachers (
 	LastName VARCHAR(20) NOT NULL,
 	DOB DATE NOT NULL,
 	Gender VARCHAR(15) NOT NULL,
+	Email VARCHAR(40) NOT NULL,
+	Phone VARCHAR(15) NOT NULL,
 	Addr_id INT,
 	CONSTRAINT pk_Teacher PRIMARY KEY (Teacher_id),
 	CONSTRAINT fk_TeacherAddress FOREIGN KEY (Addr_id) REFERENCES tbl_Addresses(Addr_id) ON UPDATE NO ACTION ON DELETE NO ACTION	
