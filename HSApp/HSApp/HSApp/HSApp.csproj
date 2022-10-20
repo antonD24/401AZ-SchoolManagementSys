@@ -105,7 +105,7 @@
     <Compile Include="Models\CLASS.cs" />
     <Compile Include="Models\Courses.cs" />
     <Compile Include="Models\Enrollments.cs" />
-    <Compile Include="Models\Students.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Subjescts.cs" />
     <Compile Include="Models\Teachers.cs" />
     <Compile Include="Program.cs" />

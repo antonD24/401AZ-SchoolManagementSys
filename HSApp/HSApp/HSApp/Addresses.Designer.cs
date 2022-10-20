@@ -61,7 +61,7 @@
             this.dgvAddr.Name = "dgvAddr";
             this.dgvAddr.ReadOnly = true;
             this.dgvAddr.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAddr.Size = new System.Drawing.Size(434, 571);
+            this.dgvAddr.Size = new System.Drawing.Size(618, 437);
             this.dgvAddr.TabIndex = 0;
             this.dgvAddr.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddr_CellClick);
             // 
@@ -158,7 +158,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(273, 560);
+            this.btnRefresh.Location = new System.Drawing.Point(273, 426);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 15;
@@ -244,7 +244,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(800, 595);
+            this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.btnSUP);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnHome);
@@ -264,6 +264,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvAddr);
+            this.MaximumSize = new System.Drawing.Size(1000, 500);
+            this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "Addresses";
             this.Text = "Addresses";
             this.Load += new System.EventHandler(this.Addresses_Load);
