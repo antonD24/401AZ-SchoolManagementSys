@@ -237,6 +237,7 @@
             this.btnSUP.TabIndex = 23;
             this.btnSUP.Text = "Save";
             this.btnSUP.UseVisualStyleBackColor = true;
+            this.btnSUP.Click += new System.EventHandler(this.btnSUP_Click);
             // 
             // Addresses
             // 

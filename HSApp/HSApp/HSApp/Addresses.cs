@@ -69,6 +69,7 @@ namespace HSApp
             btnSave.Enabled = true;
             btnAdd.Enabled = false;
             btnRefresh.Enabled = false;
+            btnDel.Enabled = false;
             addID.Text = null;
             addLine.Text = null;
             addCounty.Text = null;
@@ -87,6 +88,7 @@ namespace HSApp
             btnRefresh.Enabled = true;
             btnAdd.Enabled = true;
             btnUpdate.Enabled = true;
+            btnDel.Enabled = true;
             btnSUP.Enabled = false;
             PopulateForm ();
             
@@ -114,6 +116,7 @@ namespace HSApp
             btnSave.Enabled = false;
             btnRefresh.Enabled = true;
             btnAdd.Enabled = false;
+            btnDel.Enabled=true;
             PopulateForm();
 
         }
@@ -129,17 +132,64 @@ namespace HSApp
             btnUpdate.Enabled = false;
             btnSUP.Enabled = true;
             btnRefresh.Enabled = false;
-            
+            btnDel.Enabled = false;
         }
 
         private void dgvAddr_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             PopulateForm();
+            btnDel.Enabled = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete selection?","Delete?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    Address add = new Address();
+                    add.AddressID = Convert.ToInt32(addID.Text);
+                    
+                    conn.DeleteAddr(add);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to Insert, Please check data or internet connection" + ex);
+                }
+            }
+            
+            
+        }
 
+
+        private void btnSUP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Address add = new Address();
+                add.AddressID = Convert.ToInt32(addID.Text);
+                add.Address1 = addLine.Text;
+                add.County = addCounty.Text;
+                add.City = addCity.Text;
+                add.Postcode = addPost.Text;
+                conn.UpdateAddr(add);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to Insert, Please check data or internet connection" + ex);
+            }
+            addLine.Enabled = false;
+            addCounty.Enabled = false;
+            addCity.Enabled = false;
+            addPost.Enabled = false;
+            btnSUP.Enabled = false;
+            btnRefresh.Enabled = true;
+            btnAdd.Enabled = false;
+            btnUpdate.Enabled = true;
+            btnDel.Enabled = false;
+            PopulateForm();
         }
     }
 

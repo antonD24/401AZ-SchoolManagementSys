@@ -83,7 +83,7 @@ namespace HSApp
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "CALL sp_deleteAddress(@p1)";
+                    cmd.CommandText = "CALL sp_deleteAddresses(@p1)";
                     cmd.Parameters.AddWithValue("p1", add.AddressID);
                     
                     await cmd.ExecuteNonQueryAsync();
