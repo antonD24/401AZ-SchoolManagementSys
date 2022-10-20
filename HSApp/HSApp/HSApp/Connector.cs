@@ -110,7 +110,7 @@ namespace HSApp
                             Sgender = reader.GetString(4),
                             SEmail = reader.GetString(5),
                             SPhone = reader.GetString(6),
-                            Addr = reader.GetInt32(7),
+                            
                         });
                     }
             }

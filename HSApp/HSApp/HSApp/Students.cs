@@ -56,7 +56,7 @@ namespace HSApp
                 sGender.Text = stData.SelectedCells[4].Value.ToString();
                 sEmail.Text = stData.SelectedCells[5].Value.ToString();
                 sPhone.Text = stData.SelectedCells[6].Value.ToString();
-                sAddr.Text = stData.SelectedCells[7].Value.ToString();
+                
             }
         }
 
@@ -68,7 +68,7 @@ namespace HSApp
             sGender.Enabled = true;
             sEmail.Enabled = true;
             sPhone.Enabled = true;
-            sAddr.Enabled = true;
+            
             btnSave.Enabled = true;
             btnAdd.Enabled = false;
             btnRefresh.Enabled = false;
@@ -80,7 +80,7 @@ namespace HSApp
             sGender.Text = null;
             sEmail.Text =null;
             sPhone.Text = null;
-            sAddr.Text = null;
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace HSApp
                 stu.Sgender = sGender.Text;
                 stu.SEmail = sEmail.Text;
                 stu.SPhone = sPhone.Text;
-                stu.Addr = Convert.ToInt32(sAddr);
+                
                 conn.insertStudent(stu);
 
             }
@@ -109,7 +109,7 @@ namespace HSApp
             sGender.Enabled = false;
             sEmail.Enabled = false;
             sPhone.Enabled = false;
-            sAddr.Enabled = false;
+            
             btnSave.Enabled = false;
             btnRefresh.Enabled = true;
             btnAdd.Enabled = false;
@@ -126,7 +126,7 @@ namespace HSApp
             sGender.Enabled = true;
             sEmail.Enabled = true;
             sPhone.Enabled = true;
-            sAddr.Enabled = true;
+            
             btnAdd.Enabled = false;
             btnUpdate.Enabled = false;
             btnSUP.Enabled = true;
@@ -171,7 +171,7 @@ namespace HSApp
                 stu.Sgender = sGender.Text;
                 stu.SEmail = sEmail.Text;
                 stu.SPhone = sPhone.Text;
-                stu.Addr = Convert.ToInt32(sAddr.Text);
+                
                 conn.UpdateStudent(stu);
             }
             catch (Exception ex)
@@ -184,7 +184,7 @@ namespace HSApp
             sGender.Enabled = false;
             sEmail.Enabled = false;
             sPhone.Enabled = false;
-            sAddr.Enabled = false;
+            
             btnSUP.Enabled = false;
             btnRefresh.Enabled = true;
             btnAdd.Enabled = false;

@@ -24,6 +24,6 @@ namespace HSApp.Models
         public string SPhone { get; set; }
 
         
-        public int Addr { get; set; }
+        
     }
 }
