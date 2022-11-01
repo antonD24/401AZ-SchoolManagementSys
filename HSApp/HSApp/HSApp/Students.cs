@@ -1,4 +1,5 @@
-﻿using HSApp.Models;
+﻿using HSApp.Connectors;
+using HSApp.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,14 +15,14 @@ namespace HSApp
     public partial class Students : Form
     {
         DataManager dm;
-        Connector conn;
+        StudentConn conn;
         
 
         public Students()
         {
             InitializeComponent();
             dm = new DataManager();
-            conn = new Connector();
+            conn = new StudentConn();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -190,6 +191,23 @@ namespace HSApp
             btnAdd.Enabled = false;
             btnUpdate.Enabled = true;
             btnDel.Enabled = false;
+            PopulateForm();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            sFname.Enabled = false;
+            sLname.Enabled = false;
+            sDOB.Enabled = false;
+            sGender.Enabled = false;
+            sEmail.Enabled = false;
+            sPhone.Enabled = false;
+            btnSave.Enabled = false;
+            btnRefresh.Enabled = true;
+            btnAdd.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnDel.Enabled = true;
+            btnSUP.Enabled = false;
             PopulateForm();
         }
     }

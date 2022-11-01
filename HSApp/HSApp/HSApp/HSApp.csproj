@@ -81,7 +81,8 @@
     <Compile Include="Class.Designer.cs">
       <DependentUpon>Class.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connector.cs" />
+    <Compile Include="Connectors\AddrConnector.cs" />
+    <Compile Include="Connectors\StudentConn.cs" />
     <Compile Include="Courses.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -14,7 +14,7 @@ namespace HSApp
     public partial class Addresses : Form
     {
         DataManager dm;
-        Connector conn;
+        AddrConnector conn;
 
 
 
@@ -23,7 +23,7 @@ namespace HSApp
         {
             InitializeComponent();
             dm = new DataManager();
-            conn = new Connector();
+            conn = new AddrConnector();
         }
         private void Addresses_Load(object sender, EventArgs e)
         {
