@@ -226,6 +226,7 @@
             this.sAddr.Name = "sAddr";
             this.sAddr.Size = new System.Drawing.Size(190, 31);
             this.sAddr.TabIndex = 30;
+            
             // 
             // stData
             // 
@@ -234,13 +235,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.stData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.stData.Location = new System.Drawing.Point(22, 604);
+            this.stData.Location = new System.Drawing.Point(11, 604);
             this.stData.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.stData.Name = "stData";
             this.stData.ReadOnly = true;
             this.stData.RowHeadersWidth = 82;
             this.stData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stData.Size = new System.Drawing.Size(1722, 552);
+            this.stData.Size = new System.Drawing.Size(1722, 507);
             this.stData.TabIndex = 31;
             this.stData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stData_CellClick);
             // 
@@ -316,7 +317,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(1594, 548);
+            this.btnRefresh.Location = new System.Drawing.Point(1583, 545);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(150, 44);

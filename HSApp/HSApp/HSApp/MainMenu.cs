@@ -38,7 +38,7 @@ namespace HSApp
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Teachers teachers = new Teachers();
+            TeachersForm teachers = new TeachersForm();
             teachers.Closed += (s, args) => this.Close();
             teachers.Show();
         }

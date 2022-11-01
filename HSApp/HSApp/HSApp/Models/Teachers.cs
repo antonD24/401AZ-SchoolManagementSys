@@ -18,7 +18,12 @@ namespace HSApp.Models
 
         public string Tgender { get; set; }
 
+        public string Temail { get; set; }
+
+        public string Tphone { get; set; }
         public int Addr { get; set; }
+
+
     
     }   
 }
