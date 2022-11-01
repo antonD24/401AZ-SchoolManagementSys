@@ -54,7 +54,7 @@ namespace HSApp
         private void btnSubjects_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Subjects subjects = new Subjects();
+            SubjectsForm subjects = new SubjectsForm();
             subjects.Closed += (s, args) => this.Close();
             subjects.Show();
         }

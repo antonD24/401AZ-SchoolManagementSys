@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HSApp.Models
 {
-    public abstract class Subjescts
+    public class Subject
     {
         public int SubjectID { get; set; }
 
