@@ -156,7 +156,7 @@ namespace HSApp
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to Insert, Please check data or internet connection" + ex);
+                    MessageBox.Show("Unable to delete, Please check data or internet connection" + ex);
                 }
             }
             

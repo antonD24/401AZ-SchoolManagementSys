@@ -237,6 +237,7 @@
             this.btnSUP.TabIndex = 74;
             this.btnSUP.Text = "Save";
             this.btnSUP.UseVisualStyleBackColor = true;
+            this.btnSUP.Click += new System.EventHandler(this.btnSUP_Click);
             // 
             // btnSave
             // 
@@ -248,6 +249,7 @@
             this.btnSave.TabIndex = 73;
             this.btnSave.Text = "Save New";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDel
             // 
@@ -259,6 +261,7 @@
             this.btnDel.TabIndex = 72;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -269,6 +272,7 @@
             this.btnAdd.TabIndex = 71;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // button4
             // 
@@ -279,6 +283,7 @@
             this.button4.TabIndex = 70;
             this.button4.Text = "Clear Selection";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnUpdate
             // 
@@ -289,6 +294,7 @@
             this.btnUpdate.TabIndex = 69;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnRefresh
             // 
@@ -300,6 +306,7 @@
             this.btnRefresh.TabIndex = 68;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Tdata
             // 
@@ -316,6 +323,7 @@
             this.Tdata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Tdata.Size = new System.Drawing.Size(1722, 507);
             this.Tdata.TabIndex = 75;
+            this.Tdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Tdata_CellClick);
             // 
             // TeachersForm
             // 
@@ -353,6 +361,7 @@
             this.MinimumSize = new System.Drawing.Size(1774, 1184);
             this.Name = "TeachersForm";
             this.Text = "Teachers";
+            this.Load += new System.EventHandler(this.TeachersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Tdata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

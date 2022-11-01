@@ -73,7 +73,7 @@ namespace HSApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            teachID.Enabled = true;
+            
             Tfname.Enabled = true;
             Tlname.Enabled = true;
             Tdob.Enabled = true;
@@ -117,7 +117,7 @@ namespace HSApp
             {
                 MessageBox.Show("Unable to Insert, Please check data or internet connection" + ex);
             }
-            teachID.Enabled = false;
+            
             Tfname.Enabled = false;
             Tlname.Enabled = false;
             Tdob.Enabled = false;
@@ -135,7 +135,7 @@ namespace HSApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            teachID.Enabled = true;
+            
             Tfname.Enabled = true;
             Tlname.Enabled = true;
             Tdob.Enabled = true;

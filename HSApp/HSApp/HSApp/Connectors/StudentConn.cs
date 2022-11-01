@@ -14,16 +14,16 @@ namespace HSApp.Connectors
 
         public List<Student> getStudents()
         {
-            List<Student> addresses = new List<Student>();
-            using (var StudentConn = new MySqlConnection(connString))
+            List<Student> stu = new List<Student>();
+            using (var conn = new MySqlConnection(connString))
             {
-                StudentConn.Open();
+                conn.Open();
 
-                using (var cmd = new MySqlCommand("CALL sp_getStudents()", StudentConn))
+                using (var cmd = new MySqlCommand("CALL sp_getStudents()", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
-                        addresses.Add(new Student
+                        stu.Add(new Student
                         {
                             studentID = reader.GetInt32(0),
                             Sfname = reader.GetString(1),
@@ -32,10 +32,12 @@ namespace HSApp.Connectors
                             Sgender = reader.GetString(4),
                             SEmail = reader.GetString(5),
                             SPhone = reader.GetString(6),
+                            Saddr = reader.GetInt32(7),
+                            
                         });
                     }
             }
-            return addresses;
+            return stu;
 
         }
         async public void insertStudent(Student student)
@@ -46,13 +48,14 @@ namespace HSApp.Connectors
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "CALL sp_InsertStudent(@p1,@p2,@p3,@p4,@p5,@6)";
+                    cmd.CommandText = "CALL sp_InsertStudent(@p1,@p2,@p3,@p4,@p5,@p6,@p7)";
                     cmd.Parameters.AddWithValue("p1", student.Sfname);
                     cmd.Parameters.AddWithValue("p2", student.Slname);
                     cmd.Parameters.AddWithValue("p3", student.DOB);
                     cmd.Parameters.AddWithValue("p4", student.Sgender);
                     cmd.Parameters.AddWithValue("p5", student.SEmail);
                     cmd.Parameters.AddWithValue("p6", student.SPhone);
+                    cmd.Parameters.AddWithValue("p7", student.Saddr);
                     await cmd.ExecuteNonQueryAsync();
                 }
             }
@@ -66,7 +69,7 @@ namespace HSApp.Connectors
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "CALL sp_UpdateStudents(@p1,@p2,@p3,@p4,@p5)";
+                    cmd.CommandText = "CALL sp_UpdateStudents(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)";
                     cmd.Parameters.AddWithValue("p1", student.studentID);
                     cmd.Parameters.AddWithValue("p2", student.Sfname);
                     cmd.Parameters.AddWithValue("p3", student.Slname);
@@ -74,6 +77,8 @@ namespace HSApp.Connectors
                     cmd.Parameters.AddWithValue("p5", student.Sgender);
                     cmd.Parameters.AddWithValue("p6", student.SEmail);
                     cmd.Parameters.AddWithValue("p7", student.SPhone);
+                    cmd.Parameters.AddWithValue("p8", student.Saddr);
+                    
                     await cmd.ExecuteNonQueryAsync();
                 }
             }

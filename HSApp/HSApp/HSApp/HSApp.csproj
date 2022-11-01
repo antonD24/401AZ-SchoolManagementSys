@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="Connectors\AddrConnector.cs" />
     <Compile Include="Connectors\StudentConn.cs" />
+    <Compile Include="Connectors\TConn.cs" />
     <Compile Include="Courses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,11 +124,11 @@
     <Compile Include="Subjects.Designer.cs">
       <DependentUpon>Subjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="Teachers.cs">
+    <Compile Include="TeachersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Teachers.Designer.cs">
-      <DependentUpon>Teachers.cs</DependentUpon>
+    <Compile Include="TeachersForm.Designer.cs">
+      <DependentUpon>TeachersForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Addresses.resx">
       <DependentUpon>Addresses.cs</DependentUpon>
@@ -159,8 +160,8 @@
     <EmbeddedResource Include="Subjects.resx">
       <DependentUpon>Subjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Teachers.resx">
-      <DependentUpon>Teachers.cs</DependentUpon>
+    <EmbeddedResource Include="TeachersForm.resx">
+      <DependentUpon>TeachersForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -28,6 +28,6 @@ C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Class.re
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Enrollments.resources
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Addresses.resources
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Students.resources
-C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Teachers.resources
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Courses.resources
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Subjects.resources
+C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.TeachersForm.resources
