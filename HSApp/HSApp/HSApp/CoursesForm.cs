@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HSApp
 {
-    public partial class Enrollments : Form
+    public partial class CoursesForm : Form
     {
-        public Enrollments()
+        public CoursesForm()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace HSApp
 {
-    partial class Courses
+    partial class CoursesForm
     {
         /// <summary>
         /// Required designer variable.

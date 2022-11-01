@@ -46,7 +46,7 @@ namespace HSApp
         private void btnCourses_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Courses courses = new Courses();
+            CoursesForm courses = new CoursesForm();
             courses.Closed += (s, args) => this.Close();
             courses.Show();
         }
@@ -70,7 +70,7 @@ namespace HSApp
         private void btnEnrollments_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Enrollments enrollments = new Enrollments();
+            EnrollmentsForm enrollments = new EnrollmentsForm();
             enrollments.Closed += (s, args) => this.Close();
             enrollments.Show();
         }
