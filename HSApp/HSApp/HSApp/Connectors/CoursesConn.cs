@@ -19,7 +19,7 @@ namespace HSApp.Connectors
             {
                 conn.Open();
 
-                using (var cmd = new MySqlCommand("CALL sp_getCourses()", conn))
+                using (var cmd = new MySqlCommand("CALL sp_getCourse()", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
@@ -27,8 +27,16 @@ namespace HSApp.Connectors
                         {
                             CourseID = reader.GetInt32(0),
                             SubjectID = reader.GetInt32(1),
-                            AddressID = reader.GetInt32(2),
-                            TeacherID = reader.GetInt32(3),
+                            SubjectName = reader.GetString(2),
+                            BuildingName = reader.GetString(3),
+                            TeacherID = reader.GetInt32(4),
+                            TeacherFName = reader.GetString(5),
+                            TeacherLname = reader.GetString(6),
+                            AddressID = reader.GetInt32(7),
+                            Address1 = reader.GetString(8),
+                            County = reader.GetString(9),
+                            City = reader.GetString(10),
+                            Postcode =reader.GetString(11),
                             
                         });
                     }
@@ -62,7 +70,7 @@ namespace HSApp.Connectors
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "CALL sp_UpdateTeacher(@p1,@p2,@p3,@p4)";
+                    cmd.CommandText = "CALL sp_UpdateCourse(@p1,@p2,@p3,@p4)";
                     cmd.Parameters.AddWithValue("p1", course.CourseID);
                     cmd.Parameters.AddWithValue("p2", course.SubjectID);
                     cmd.Parameters.AddWithValue("p3", course.AddressID);

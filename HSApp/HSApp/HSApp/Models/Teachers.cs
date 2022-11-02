@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HSApp.Models
 {
-    internal class Teachers : Address
+    public class Teachers : Address
     {
         public int TeacherID  { get; set; }
 

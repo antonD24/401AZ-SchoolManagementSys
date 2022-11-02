@@ -56,9 +56,9 @@ namespace HSApp
                 cID.Text = CUData.SelectedCells[0].Value.ToString();
 
                 SubID.Text = CUData.SelectedCells[1].Value.ToString();
-                AddID.Text = CUData.SelectedCells[2].Value.ToString();
-                teachID.Text = CUData.SelectedCells[3].Value.ToString();
                 
+                teachID.Text = CUData.SelectedCells[4].Value.ToString();
+                AddID.Text = CUData.SelectedCells[7].Value.ToString();
 
             }
 

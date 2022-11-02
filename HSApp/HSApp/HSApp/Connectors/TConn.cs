@@ -51,14 +51,14 @@ namespace HSApp.Connectors
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "CALL sp_InsertTeacher(@p1,@p2,@p3,@p4,@p5,@p6)";
+                    cmd.CommandText = "CALL sp_InsertTeacher(@p1,@p2,@p3,@p4,@p5,@p6,@p7)";
                     cmd.Parameters.AddWithValue("p1", Tconn.TeacherFName);
                     cmd.Parameters.AddWithValue("p2", Tconn.TeacherLname);
                     cmd.Parameters.AddWithValue("p3", Tconn.DOB);
                     cmd.Parameters.AddWithValue("p4", Tconn.Tgender);
                     cmd.Parameters.AddWithValue("p5", Tconn.Temail);
                     cmd.Parameters.AddWithValue("p6", Tconn.Tphone);
-                    cmd.Parameters.AddWithValue("p6", Tconn.AddressID);
+                    cmd.Parameters.AddWithValue("p7", Tconn.AddressID);
                     await cmd.ExecuteNonQueryAsync();
                 }
             }
