@@ -27,8 +27,12 @@ namespace HSApp.Connectors
                         {
                             EnrollmentID = reader.GetInt32(0),
                             StudentID = reader.GetInt32(1),
-                            CourseID = reader.GetInt32(2),
-                            DOE = reader.GetDateTime(3),
+                            Sfname = reader.GetString(2),
+                            Slname = reader.GetString(3),
+                            CourseID = reader.GetInt32(4),
+                            SubjectID = reader.GetInt32(5),
+                            SubjectName = reader.GetString(6),
+                            DOE = reader.GetDateTime(7),
 
                         });
                     }
