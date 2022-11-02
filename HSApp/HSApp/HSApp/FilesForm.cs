@@ -10,23 +10,17 @@ using System.Windows.Forms;
 
 namespace HSApp
 {
-    public partial class Class : Form
+    public partial class FilesForm : Form
     {
-        public Class()
+        public FilesForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void menu_Click(object sender, EventArgs e)
         {
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
-        }
-
-        private void file_Click(object sender, EventArgs e)
-        {
-            FilesForm filesform = new FilesForm();
-            filesform.Show();
         }
     }
 }

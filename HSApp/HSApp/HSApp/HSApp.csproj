@@ -82,27 +82,35 @@
       <DependentUpon>Class.cs</DependentUpon>
     </Compile>
     <Compile Include="Connectors\AddrConnector.cs" />
+    <Compile Include="Connectors\CoursesConn.cs" />
+    <Compile Include="Connectors\EnrollConn.cs" />
     <Compile Include="Connectors\StudentConn.cs" />
     <Compile Include="Connectors\SubConn.cs" />
     <Compile Include="Connectors\TConn.cs" />
-    <Compile Include="Courses.cs">
+    <Compile Include="CoursesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Courses.Designer.cs">
-      <DependentUpon>Courses.cs</DependentUpon>
+    <Compile Include="CoursesForm.Designer.cs">
+      <DependentUpon>CoursesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManager.cs" />
+    <Compile Include="FilesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilesForm.Designer.cs">
+      <DependentUpon>FilesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Enrollments.cs">
+    <Compile Include="EnrollmentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Enrollments.Designer.cs">
-      <DependentUpon>Enrollments.cs</DependentUpon>
+    <Compile Include="EnrollmentsForm.Designer.cs">
+      <DependentUpon>EnrollmentsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\CLASS.cs" />
@@ -137,11 +145,14 @@
     <EmbeddedResource Include="Class.resx">
       <DependentUpon>Class.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Courses.resx">
-      <DependentUpon>Courses.cs</DependentUpon>
+    <EmbeddedResource Include="CoursesForm.resx">
+      <DependentUpon>CoursesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Enrollments.resx">
-      <DependentUpon>Enrollments.cs</DependentUpon>
+    <EmbeddedResource Include="EnrollmentsForm.resx">
+      <DependentUpon>EnrollmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilesForm.resx">
+      <DependentUpon>FilesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

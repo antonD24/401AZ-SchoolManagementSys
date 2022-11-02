@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.file = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,12 +162,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(879, 295);
             this.dataGridView1.TabIndex = 128;
             // 
+            // file
+            // 
+            this.file.Location = new System.Drawing.Point(9, 40);
+            this.file.Name = "file";
+            this.file.Size = new System.Drawing.Size(75, 49);
+            this.file.TabIndex = 141;
+            this.file.Text = "Teaching Materials";
+            this.file.UseVisualStyleBackColor = true;
+            this.file.Click += new System.EventHandler(this.file_Click);
+            // 
             // Class
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(884, 611);
+            this.Controls.Add(this.file);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -204,5 +216,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button file;
     }
 }
