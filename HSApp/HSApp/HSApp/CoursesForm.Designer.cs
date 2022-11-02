@@ -149,6 +149,7 @@
             this.btnSUP.TabIndex = 117;
             this.btnSUP.Text = "Save";
             this.btnSUP.UseVisualStyleBackColor = true;
+            this.btnSUP.Click += new System.EventHandler(this.btnSUP_Click);
             // 
             // btnSave
             // 
@@ -159,6 +160,7 @@
             this.btnSave.TabIndex = 116;
             this.btnSave.Text = "Save New";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDel
             // 
@@ -169,6 +171,7 @@
             this.btnDel.TabIndex = 115;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -178,6 +181,7 @@
             this.btnAdd.TabIndex = 114;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // button4
             // 
@@ -187,6 +191,7 @@
             this.button4.TabIndex = 113;
             this.button4.Text = "Clear Selection";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnUpdate
             // 
@@ -196,6 +201,7 @@
             this.btnUpdate.TabIndex = 112;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // CUData
             // 
@@ -211,6 +217,7 @@
             this.CUData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CUData.Size = new System.Drawing.Size(861, 264);
             this.CUData.TabIndex = 111;
+            this.CUData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CUData_CellClick);
             // 
             // CoursesForm
             // 

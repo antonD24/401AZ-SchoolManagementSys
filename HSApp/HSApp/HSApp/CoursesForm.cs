@@ -126,7 +126,7 @@ namespace HSApp
             btnDel.Enabled = false;
         }
 
-        private void stData_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void CUData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             PopulateForm();
             btnDel.Enabled = true;
