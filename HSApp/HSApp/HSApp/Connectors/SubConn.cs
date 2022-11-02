@@ -33,6 +33,7 @@ namespace HSApp
                             CStartDate = reader.GetDateTime(3),
                             CEndDate = reader.GetDateTime(4),
                             BuildingName = reader.GetString(5),
+                            
                         });
                     }
             }
