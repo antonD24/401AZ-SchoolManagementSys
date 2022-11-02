@@ -37,11 +37,7 @@ namespace HSApp
             PopulateForm();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            refreshData();
-            PopulateForm();
-        }
+        
         private void refreshData()
         {
             stData.DataSource = dm.toDataTable(conn.getStudents());
@@ -58,6 +54,7 @@ namespace HSApp
                 sEmail.Text = stData.SelectedCells[5].Value.ToString();
                 sPhone.Text = stData.SelectedCells[6].Value.ToString();
                 sAddr.Text = stData.SelectedCells[7].Value.ToString();
+                
                 
             }
         }
@@ -98,7 +95,7 @@ namespace HSApp
                 stu.Sgender = sGender.Text;
                 stu.SEmail = sEmail.Text;
                 stu.SPhone = sPhone.Text;
-                stu.Saddr = Convert.ToInt32(sAddr.Text);
+                stu.AddressID = Convert.ToInt32(sAddr.Text);
                 
                 conn.insertStudent(stu);
 
@@ -178,7 +175,7 @@ namespace HSApp
                 stu.Sgender = sGender.Text;
                 stu.SEmail = sEmail.Text;
                 stu.SPhone = sPhone.Text;
-                stu.Saddr = Convert.ToInt32(sAddr.Text);
+                stu.AddressID = Convert.ToInt32(sAddr.Text);
 
                 
                 conn.UpdateStudent(stu);
@@ -221,6 +218,10 @@ namespace HSApp
             PopulateForm();
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            refreshData();
+            PopulateForm();
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace HSApp.Connectors
             {
                 conn.Open();
 
-                using (var cmd = new MySqlCommand("CALL sp_getStudents()", conn))
+                using (var cmd = new MySqlCommand("CALL sp_getStudent()", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
@@ -32,7 +32,12 @@ namespace HSApp.Connectors
                             Sgender = reader.GetString(4),
                             SEmail = reader.GetString(5),
                             SPhone = reader.GetString(6),
-                            Saddr = reader.GetInt32(7),
+                            AddressID = reader.GetInt32(7),
+                            Address1 = reader.GetString(8),
+                            County = reader.GetString(9),
+                            City = reader.GetString(10),
+                            Postcode = reader.GetString(11),
+                            
                             
                         });
                     }
@@ -55,7 +60,7 @@ namespace HSApp.Connectors
                     cmd.Parameters.AddWithValue("p4", student.Sgender);
                     cmd.Parameters.AddWithValue("p5", student.SEmail);
                     cmd.Parameters.AddWithValue("p6", student.SPhone);
-                    cmd.Parameters.AddWithValue("p7", student.Saddr);
+                    cmd.Parameters.AddWithValue("p7", student.AddressID);
                     await cmd.ExecuteNonQueryAsync();
                 }
             }
@@ -77,7 +82,7 @@ namespace HSApp.Connectors
                     cmd.Parameters.AddWithValue("p5", student.Sgender);
                     cmd.Parameters.AddWithValue("p6", student.SEmail);
                     cmd.Parameters.AddWithValue("p7", student.SPhone);
-                    cmd.Parameters.AddWithValue("p8", student.Saddr);
+                    cmd.Parameters.AddWithValue("p8", student.AddressID);
                     
                     await cmd.ExecuteNonQueryAsync();
                 }
