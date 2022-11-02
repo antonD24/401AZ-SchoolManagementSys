@@ -19,7 +19,7 @@ namespace HSApp.Connectors
             {
                 conn.Open();
 
-                using (var cmd = new MySqlCommand("CALL sp_getTeachers()", conn))
+                using (var cmd = new MySqlCommand("CALL sp_getTeacher()", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
@@ -32,7 +32,11 @@ namespace HSApp.Connectors
                             Tgender = reader.GetString(4),
                             Temail = reader.GetString(5),
                             Tphone = reader.GetString(6),
-                            Addr = reader.GetInt32(7),
+                            AddressID = reader.GetInt32(7),
+                            Address1 = reader.GetString(8),
+                            County = reader.GetString(9),
+                            City = reader.GetString(10),
+                            Postcode = reader.GetString(11),
                         });
                     }
             }
@@ -54,7 +58,7 @@ namespace HSApp.Connectors
                     cmd.Parameters.AddWithValue("p4", Tconn.Tgender);
                     cmd.Parameters.AddWithValue("p5", Tconn.Temail);
                     cmd.Parameters.AddWithValue("p6", Tconn.Tphone);
-                    cmd.Parameters.AddWithValue("p6", Tconn.Addr);
+                    cmd.Parameters.AddWithValue("p6", Tconn.AddressID);
                     await cmd.ExecuteNonQueryAsync();
                 }
             }
@@ -76,7 +80,7 @@ namespace HSApp.Connectors
                     cmd.Parameters.AddWithValue("p5", Tconn.Tgender);
                     cmd.Parameters.AddWithValue("p6", Tconn.Temail);
                     cmd.Parameters.AddWithValue("p7", Tconn.Tphone);
-                    cmd.Parameters.AddWithValue("p8", Tconn.Addr);
+                    cmd.Parameters.AddWithValue("p8", Tconn.AddressID);
                     await cmd.ExecuteNonQueryAsync();
                 }
             }

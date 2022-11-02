@@ -46,7 +46,8 @@ namespace HSApp
             PopulateForm();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        
+        private void button2_Click(object sender, EventArgs e)
         {
             refreshData();
             PopulateForm();
@@ -108,7 +109,7 @@ namespace HSApp
                 teachers.Tgender = Tgender.Text;
                 teachers.Temail = Temail.Text;
                 teachers.Tphone = Tphone.Text;
-                teachers.Addr = Convert.ToInt32(Taddr.Text);
+                teachers.AddressID = Convert.ToInt32(Taddr.Text);
 
                 conn.insertTeacher(teachers);
 
@@ -188,7 +189,7 @@ namespace HSApp
                 teacher.Tgender = Tgender.Text;
                 teacher.Temail = Temail.Text;
                 teacher.Tphone = Tphone.Text;
-                teacher.Addr = Convert.ToInt32(Taddr.Text);
+                teacher.AddressID= Convert.ToInt32(Taddr.Text);
 
                 conn.UpdateTeacher(teacher);
             }

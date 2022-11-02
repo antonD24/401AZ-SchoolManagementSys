@@ -21,7 +21,7 @@ namespace HSApp.Models
         public string Temail { get; set; }
 
         public string Tphone { get; set; }
-        public int Addr { get; set; }
+        
 
 
     
