@@ -73,7 +73,7 @@ namespace HSApp.Connectors
             }
         }
 
-        async public void DeleteAddr(Courses course)
+        async public void DeleteCourse(Courses course)
         {
             using (var conn = new MySqlConnection(connString))
             {
