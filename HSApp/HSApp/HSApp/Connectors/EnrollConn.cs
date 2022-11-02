@@ -19,7 +19,7 @@ namespace HSApp.Connectors
             {
                 conn.Open();
 
-                using (var cmd = new MySqlCommand("CALL sp_getEnrollments()", conn))
+                using (var cmd = new MySqlCommand("CALL sp_getEnrollment()", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {

@@ -149,6 +149,7 @@
             this.btnSUP.TabIndex = 134;
             this.btnSUP.Text = "Save";
             this.btnSUP.UseVisualStyleBackColor = true;
+            this.btnSUP.Click += new System.EventHandler(this.btnSUP_Click);
             // 
             // btnSave
             // 
@@ -159,6 +160,7 @@
             this.btnSave.TabIndex = 133;
             this.btnSave.Text = "Save New";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDel
             // 
@@ -169,6 +171,7 @@
             this.btnDel.TabIndex = 132;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -178,6 +181,7 @@
             this.btnAdd.TabIndex = 131;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // button4
             // 
@@ -187,6 +191,7 @@
             this.button4.TabIndex = 130;
             this.button4.Text = "Clear Selection";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnUpdate
             // 
@@ -196,6 +201,7 @@
             this.btnUpdate.TabIndex = 129;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // EData
             // 
@@ -209,15 +215,16 @@
             this.EData.ReadOnly = true;
             this.EData.RowHeadersWidth = 82;
             this.EData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EData.Size = new System.Drawing.Size(861, 264);
+            this.EData.Size = new System.Drawing.Size(866, 314);
             this.EData.TabIndex = 128;
+            this.EData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EData_CellClick);
             // 
             // EnrollmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(884, 611);
+            this.ClientSize = new System.Drawing.Size(884, 661);
             this.Controls.Add(this.btnSUP);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDel);
@@ -235,8 +242,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(900, 650);
-            this.MinimumSize = new System.Drawing.Size(900, 650);
+            this.MaximumSize = new System.Drawing.Size(900, 700);
+            this.MinimumSize = new System.Drawing.Size(900, 700);
             this.Name = "EnrollmentsForm";
             this.Text = "Enrollments";
             this.Load += new System.EventHandler(this.EnrollmentsForm_Load);
