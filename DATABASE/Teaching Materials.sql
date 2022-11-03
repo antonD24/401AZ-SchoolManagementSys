@@ -9,7 +9,7 @@ CREATE TABLE tbl_Files (
 DELIMITER //
 CREATE PROCEDURE sp_ViewFiles()
 BEGIN 
-	SELECT File_id, FileName FROM tbl_Files;
+	SELECT * FROM tbl_Files;
 END//
 DELIMITER ;
 
@@ -20,7 +20,7 @@ CREATE PROCEDURE sp_GetFiles(id INT)
 BEGIN 
 	SELECT * FROM tbl_Files WHERE File_id = id;
 END//
-DELIMITER;
+DELIMITER ;
 
 CALL sp_GetFiles(1);
 

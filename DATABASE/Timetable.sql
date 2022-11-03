@@ -1,0 +1,43 @@
+CREATE TABLE tbl_Time (
+	Time_id INT AUTO_INCREMENT,
+	Time_Name VARCHAR(60) NOT NULL,
+	TimeData LONGBLOB NOT NULL,
+	CONSTRAINT pk_Time PRIMARY KEY (Time_id)
+);
+
+
+DELIMITER //
+CREATE PROCEDURE sp_ViewTime()
+BEGIN 
+	SELECT * FROM tbl_Time;
+END//
+DELIMITER ;
+
+CALL sp_ViewTime();
+
+DELIMITER //
+CREATE PROCEDURE sp_GetTime(id INT)
+BEGIN 
+	SELECT * FROM tbl_Time WHERE Time_id = id;
+END//
+DELIMITER ;
+
+CALL sp_GetTime(1);
+
+DELIMITER //
+CREATE PROCEDURE sp_InsertTime(Tname VARCHAR(60), TData LONGBLOB)
+BEGIN 
+	INSERT INTO tbl_Time(TimeName,TimeData) VALUES (Tname,TData);
+END//
+DELIMITER ;
+
+CALL sp_InsertFile();
+
+DELIMITER //
+CREATE PROCEDURE sp_DeleteTime(id INT)
+BEGIN
+	DELETE FROM tbl Time WHERE File_id = id;
+END//
+DELIMITER ;
+
+CALL sp_DeleteTime();
