@@ -25,7 +25,7 @@ namespace HSApp
 
         private void file_Click(object sender, EventArgs e)
         {
-            FilesForm filesform = new FilesForm();
+            TeachMatForm filesform = new TeachMatForm();
             filesform.Show();
         }
     }

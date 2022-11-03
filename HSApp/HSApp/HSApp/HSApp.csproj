@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connectors\MaterialConn.cs" />
     <Compile Include="Forms\Addresses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,11 +95,11 @@
       <DependentUpon>CoursesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManager.cs" />
-    <Compile Include="Forms\FilesForm.cs">
+    <Compile Include="Forms\TeachMatForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FilesForm.Designer.cs">
-      <DependentUpon>FilesForm.cs</DependentUpon>
+    <Compile Include="Forms\TeachMatForm.Designer.cs">
+      <DependentUpon>TeachMatForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainMenu.cs">
       <SubType>Form</SubType>
@@ -112,10 +113,17 @@
     <Compile Include="Forms\EnrollmentsForm.Designer.cs">
       <DependentUpon>EnrollmentsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Timetables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Timetables.Designer.cs">
+      <DependentUpon>Timetables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\CLASS.cs" />
     <Compile Include="Models\Courses.cs" />
     <Compile Include="Models\Enrollments.cs" />
+    <Compile Include="Models\Materials.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Teachers.cs" />
@@ -151,11 +159,14 @@
     <EmbeddedResource Include="Forms\EnrollmentsForm.resx">
       <DependentUpon>EnrollmentsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FilesForm.resx">
-      <DependentUpon>FilesForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\TeachMatForm.resx">
+      <DependentUpon>TeachMatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Timetables.resx">
+      <DependentUpon>Timetables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

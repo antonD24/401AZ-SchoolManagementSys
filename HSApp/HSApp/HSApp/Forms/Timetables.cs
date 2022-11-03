@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HSApp
+namespace HSApp.Forms
 {
-    public partial class FilesForm : Form
+    public partial class Timetables : Form
     {
-        public FilesForm()
+        public Timetables()
         {
             InitializeComponent();
-        }
-
-        private void menu_Click(object sender, EventArgs e)
-        {
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.Show();
         }
     }
 }
