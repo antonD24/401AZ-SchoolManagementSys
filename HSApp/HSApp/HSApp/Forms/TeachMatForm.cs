@@ -85,11 +85,11 @@ namespace HSApp
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    var filename = openFileDialog.SafeFileName;
+                    var filename = openFileDialog.FileName;
                     bytes = File.ReadAllBytes(filename);
 
                     Materials mt = new Materials();
-                    mt.MaterialName = filename;
+                    mt.MaterialName = openFileDialog.SafeFileName;
                     mt.MaterialData = bytes;
 
                     conn.InsertFile(mt);
