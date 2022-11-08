@@ -265,7 +265,7 @@ INNER JOIN tbl_Addresses ON tbl_Courses.Addr_id = tbl_Addresses.Addr_id;
 END//
 DELIMITER ;
 
-CALL sp_getCourse(2);
+CALL sp_getCourse();
 
 DELIMITER //
 CREATE PROCEDURE sp_InsertCourse(CSub_id INT, CAddr_id INT, CTeach_id INT)
@@ -380,18 +380,11 @@ CALL sp_getClasses();
 DELIMITER //
 CREATE PROCEDURE sp_getClass(id INT)
 BEGIN 
-SELECT tbl_Class.Class_id,
-tbl_Class.Room,
-tbl_Class.Teacher_id,tbl_Teachers.FirstName,tbl_Teachers.LastName ,
-tbl_Class.Enrollment_id, 
-tbl_Enrollments.Student_id, 
-tbl_Students.stu_FirstName, tbl_Students.stu_LastName, 
-tbl_Class.TIme_id, tbl_Time.Time_Name, tbl_Time.TimeData,
-tbl_Class.File_id, tbl_Files.File_Name, tbl_Files.FileData
+SELECT tbl_Class.Class_id,tbl_Class.Room,tbl_Class.Teacher_id,tbl_Teachers.FirstName,tbl_Teachers.LastName,tbl_Class.Enrollment_id,tbl_Enrollments.Student_id, tbl_Students.stu_FirstName, tbl_Students.stu_LastName, tbl_Class.TIme_id, tbl_Time.Time_Name,tbl_Class.File_id, tbl_Files.File_Name
 FROM tbl_Class 
 INNER JOIN tbl_Teachers ON tbl_Class.Teacher_id =tbl_Teachers.Teacher_id 
 INNER JOIN tbl_Enrollments ON tbl_Class.Enrollment_id = tbl_Enrollments.Enrollment_id
-INNER JOIN tbl_Students ON tbl_Class.Enrollment_id = tbl_Enrollments.Student_id
+INNER JOIN tbl_Students ON tbl_Class.Enrollment_id = tbl_Students.Student_id
 INNER JOIN tbl_Time ON tbl_Class.TIme_id = tbl_Time.Time_id
 INNER JOIN tbl_Files ON tbl_Class.File_id = tbl_Files.File_id;
 
@@ -410,7 +403,7 @@ BEGIN
 END//
 DELIMITER ;
 
-CALL sp_InsertClass("R21",1,1,1,1);
+CALL sp_InsertClass(0,"R21",2,1,2,1);
 
 
 
