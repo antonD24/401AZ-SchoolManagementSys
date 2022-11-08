@@ -19,7 +19,8 @@ CREATE TABLE tbl_Students (
 	stu_Phone VARCHAR(15) NOT NULL,
 	Addr_id INT,
 	CONSTRAINT pk_Student PRIMARY KEY (Student_id),
-	CONSTRAINT fk_StudentAddr FOREIGN KEY (Addr_id) REFERENCES tbl_Addresses(Addr_id) ON UPDATE NO ACTION ON DELETE NO ACTION
+	CONSTRAINT fk_StudentAddr FOREIGN KEY (Addr_id) REFERENCES tbl_Addresses(Addr_id) ON UPDATE NO ACTION ON DELETE NO ACTION 
+	
 	
 );
 
@@ -75,9 +76,11 @@ CREATE TABLE tbl_Class (
 	Room VARCHAR(10) NOT NULL,
 	Teacher_id INT,
 	Enrollment_id INT,
+	TIme_id INT,
 	File_id INT,
 	CONSTRAINT pk_Class PRIMARY KEY (Class_id),
 	CONSTRAINT fk_ClassTeacher FOREIGN KEY (Teacher_id) REFERENCES tbl_Teachers(Teacher_id) ON UPDATE NO ACTION ON DELETE NO ACTION,
 	CONSTRAINT fk_ClassEnrollment FOREIGN KEY (Enrollment_id) REFERENCES tbl_Enrollments(Enrollment_id) ON UPDATE NO ACTION ON DELETE NO ACTION,
+	CONSTRAINT fk_ClassTime FOREIGN KEY (Time_id) REFERENCES tbl_Time(Time_id) ON UPDATE NO ACTION ON DELETE NO ACTION,
 	CONSTRAINT fk_ClassFile FOREIGN KEY (File_id) REFERENCES tbl_Files(File_id) ON UPDATE NO ACTION ON DELETE NO ACTION
 );

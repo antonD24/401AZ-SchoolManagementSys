@@ -18,6 +18,23 @@ DELIMITER ;
 
 CALL sp_getAddress(3);
 
+DELIMITER //
+CREATE PROCEDURE sp_InsertAddress(
+	IN Address VARCHAR(30), 
+	IN County VARCHAR(20), 
+	IN City VARCHAR(15), 
+	IN Postcode VARCHAR(10) 
+	)
+
+BEGIN 
+	INSERT INTO tbl_Addresses VALUES (0,Address, County, City, Postcode);
+END//
+DELIMITER ;
+
+CALL sp_InsertAddress("adad", "kaldk","adada", "adawaw");
+
+
+
 /* Delete Address*/
 
 DELIMITER //
@@ -30,15 +47,6 @@ DELIMITER ;
 
 CALL sp_deleteAddresses(2);
 
-DELIMITER //
-CREATE PROCEDURE sp_InsertAddress(apAddress VARCHAR(30), apCounty VARCHAR(20), apCity VARCHAR(15), apPostcode VARCHAR(10) )
-
-BEGIN 
-	INSERT INTO tbl_Addresses(Address, County, City, Postcode) VALUES (apAddress, apCounty, apCity, apPostcode);
-END//
-DELIMITER ;
-
-CALL sp_InsertAddress("adad", "kaldk","adada", "adawaw");
 
 DELIMITER //
 CREATE PROCEDURE sp_UpdateAddress(id INT,apAddress VARCHAR(30), apCounty VARCHAR(20), apCity VARCHAR(15), apPostcode VARCHAR(10) )
@@ -68,10 +76,10 @@ DELIMITER ;
 CALL sp_getStudents();
 
 DELIMITER //
-CREATE PROCEDURE sp_getStudent(id INT)
+CREATE PROCEDURE sp_getStudent()
 BEGIN 
 	SELECT tbl_Students.Student_id, tbl_Students.stu_FirstName, tbl_Students.stu_LastName, tbl_Students.stu_DOB, tbl_Students.stu_Gender,tbl_Students.stu_Email,tbl_Students.stu_Phone ,tbl_Students.Addr_id, tbl_Addresses.Address, tbl_Addresses.County, tbl_Addresses.City, tbl_Addresses.Postcode
-	FROM tbl_Students INNER JOIN tbl_Addresses ON tbl_Students.Addr_id = tbl_Addresses.Addr_id WHERE Student_id = id;
+	FROM tbl_Students INNER JOIN tbl_Addresses ON tbl_Students.Addr_id = tbl_Addresses.Addr_id;
 END//
 DELIMITER ;
 
@@ -81,11 +89,11 @@ DELIMITER //
 CREATE PROCEDURE sp_InsertStudent(Sfname VARCHAR(20), Slname VARCHAR(20), SDOB DATE, Sgender VARCHAR(15),SEmail VARCHAR(40),SPhone VARCHAR(15) ,Saddr INT )
 
 BEGIN 
-	INSERT INTO tbl_Students (stu_FirstName,stu_LastName,stu_DOB,stu_Gender,Addr_id) VALUES (Sfname, Slname, SDOB, Sgender,Saddr);
+	INSERT INTO tbl_Students VALUES (0,Sfname, Slname, SDOB, Sgender,Saddr,SEmail,SPhone);
 END//
 DELIMITER ;
 
-CALL sp_InsertStudent("Jake", "Smith",'2001-4-24',"ac@gmail.com","07235352", "Male", 3);
+CALL sp_InsertStudent("Jake", "Smith",'2001-4-24',"ac@gmail.com","07235352", "Male", 9);
 
 
 
@@ -115,7 +123,7 @@ BEGIN
 END//
 DELIMITER ;
 
-CALL sp_deleteStudent(3);
+CALL sp_deleteStudent(1);
 
 /* TEACHERS SP's*/
 
@@ -132,7 +140,7 @@ DELIMITER //
 CREATE PROCEDURE sp_getTeacher(id INT)
 BEGIN 
 	SELECT tbl_Teachers.Teacher_id, tbl_Teachers.FirstName, tbl_Teachers.LastName, tbl_Teachers.DOB, tbl_Teachers.Gender,tbl_Teachers.Email,tbl_Teachers.Phone, tbl_Teachers.Addr_id, tbl_Addresses.Address, tbl_Addresses.County, tbl_Addresses.City, tbl_Addresses.Postcode
-	FROM tbl_Teachers INNER JOIN tbl_Addresses ON tbl_Teachers.Addr_id = tbl_Addresses.Addr_id WHERE Teacher_id = id;
+	FROM tbl_Teachers INNER JOIN tbl_Addresses ON tbl_Teachers.Addr_id = tbl_Addresses.Addr_id;
 END//
 DELIMITER ;
 
@@ -142,7 +150,7 @@ DELIMITER //
 CREATE PROCEDURE sp_InsertTeacher(Tfname VARCHAR(20), Tlname VARCHAR(20), TDOB DATE, Tgender VARCHAR(15),TEmail VARCHAR(40),TPhone VARCHAR(15), Taddr INT )
 
 BEGIN 
-	INSERT INTO tbl_Teachers (FirstName,LastName,DOB,Gender,Email,Phone,Addr_id) VALUES (Tfname, Tlname, TDOB, Tgender,TEmail,TPhone,Taddr);
+	INSERT INTO tbl_Teachers (FirstName,LastName,DOB,Gender,Email,Phone,Addr_id) VALUES (0,Tfname, Tlname, TDOB, Tgender,TEmail,TPhone,0);
 END//
 DELIMITER ;
 
@@ -212,10 +220,11 @@ DELIMITER //
 CREATE PROCEDURE sp_InsertSubject(subName VARCHAR(20), subDesc VARCHAR(255), CstartDate DATE, CendDate DATE, CBuilding VARCHAR(30) )
 
 BEGIN 
-	INSERT INTO tbl_Subjects(Sname, Sdesc, C_StartDate, C_EndDate) VALUES (subName, subDesc, CstartDate, CendDate, CBuilding );
+	INSERT INTO tbl_Subjects(Sname, Sdesc, C_StartDate, C_EndDate,Building_Name) VALUES (subName, subDesc, CstartDate, CendDate, CBuilding );
 END//
 DELIMITER ;
 
+CALL sp_InsertSubject ("Aerospace", "Advanced maths for aerospace design and testing", '2022-09-14', '2023-04-15', "Engineering Building");
 
 
 DELIMITER //
@@ -251,7 +260,7 @@ SELECT tbl_Courses.Course_id, tbl_Courses.Sub_id, tbl_Subjects.Sname, tbl_Subjec
 FROM tbl_Courses 
 INNER JOIN tbl_Subjects ON tbl_Courses.Sub_id = tbl_Subjects.Sub_id 
 INNER JOIN tbl_Teachers ON tbl_Courses.Teacher_id = tbl_Teachers.Teacher_id 
-INNER JOIN tbl_Addresses ON tbl_Courses.Addr_id = tbl_Addresses.Addr_id WHERE Course_id = id ; 
+INNER JOIN tbl_Addresses ON tbl_Courses.Addr_id = tbl_Addresses.Addr_id; 
 
 END//
 DELIMITER ;
@@ -312,7 +321,7 @@ BEGIN
 SELECT tbl_Enrollments.Enrollment_id,tbl_Enrollments.DOE ,tbl_Enrollments.Student_id, tbl_Students.stu_FirstName, tbl_Students.stu_LastName, tbl_Courses.Course_id, tbl_Courses.Sub_id
 FROM tbl_Enrollments 
 INNER JOIN tbl_Students ON tbl_Enrollments.Student_id =tbl_Students.Student_id 
-INNER JOIN tbl_Courses ON tbl_Enrollments.Course_id = tbl_Courses.Course_id WHERE Enrollment_id = id;
+INNER JOIN tbl_Courses ON tbl_Enrollments.Course_id = tbl_Courses.Course_id ;
 
 END//
 DELIMITER ;
@@ -357,8 +366,84 @@ DELIMITER ;
 CALL sp_deleteEnrollment(2);
 
 
+/* Class SP's*/
+
+DELIMITER //
+CREATE PROCEDURE sp_getClasses()
+BEGIN 
+	SELECT * FROM tbl_Class;
+END//
+DELIMITER ;
+
+CALL sp_getClasses();
+
+DELIMITER //
+CREATE PROCEDURE sp_getClass(id INT)
+BEGIN 
+SELECT tbl_Class.Class_id,
+tbl_Class.Room,
+tbl_Class.Teacher_id,tbl_Teachers.FirstName,tbl_Teachers.LastName ,
+tbl_Class.Enrollment_id, 
+tbl_Enrollments.Student_id, 
+tbl_Students.stu_FirstName, tbl_Students.stu_LastName, 
+tbl_Class.TIme_id, tbl_Time.Time_Name, tbl_Time.TimeData,
+tbl_Class.File_id, tbl_Files.File_Name, tbl_Files.FileData
+FROM tbl_Class 
+INNER JOIN tbl_Teachers ON tbl_Class.Teacher_id =tbl_Teachers.Teacher_id 
+INNER JOIN tbl_Enrollments ON tbl_Class.Enrollment_id = tbl_Enrollments.Enrollment_id
+INNER JOIN tbl_Students ON tbl_Class.Enrollment_id = tbl_Enrollments.Student_id
+INNER JOIN tbl_Time ON tbl_Class.TIme_id = tbl_Time.Time_id
+INNER JOIN tbl_Files ON tbl_Class.File_id = tbl_Files.File_id;
+
+
+END//
+DELIMITER ;
+
+CALL sp_getClass(1);
+
+DELIMITER //
+CREATE PROCEDURE sp_InsertClass(CRoom VARCHAR(10),CTeacher INT, CEnroll INT,Ctime INT, Cfile INT)
+
+BEGIN 
+	INSERT INTO tbl_Class (Room, Teacher_id, Enrollment_id, TIme_id, File_id) 
+	VALUES (CRoom, CTeacher, CEnroll, Ctime, Cfile);
+END//
+DELIMITER ;
+
+CALL sp_InsertEnrollment("R21",1,1,1,1);
+
+
+
+DELIMITER //
+CREATE PROCEDURE sp_UpdateClass(id INT,CRoom VARCHAR(10),CTeacher INT, CEnroll INT,Ctime INT, Cfile INT)
+
+BEGIN 
+	UPDATE tbl_Class
+	SET
+		Room = CRoom,
+		Teacher_id = CTeacher,
+		Enrollment_id = CEnroll,
+		Time_id = Ctime,
+		File_id = Cfile
+	WHERE Class_id = id;
+END//
+DELIMITER ;
+
+CALL sp_UpdateEnrollment("R5",2,3,1,2);
+
+DELIMITER //
+CREATE PROCEDURE sp_deleteClass(id INT)
+
+BEGIN 
+	DELETE FROM tbl_Class WHERE Class_id = id;
+END//
+DELIMITER ;
+
+CALL sp_deleteClass(2);
 
 
 
 
- 
+
+
+
