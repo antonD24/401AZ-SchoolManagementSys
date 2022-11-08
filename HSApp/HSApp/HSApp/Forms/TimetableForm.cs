@@ -13,19 +13,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace HSApp
+namespace HSApp.Forms
 {
-    public partial class TeachMatForm : Form
+    public partial class TimetableForm : Form
     {
         DataManager dm;
-        MaterialConn conn;
+        TimeConn conn;
 
-        public TeachMatForm()
+        public TimetableForm()
         {
+            
             InitializeComponent();
             dm = new DataManager();
-            conn = new MaterialConn();
+            conn = new TimeConn();
         }
+
 
         private void menu_Click(object sender, EventArgs e)
         {
@@ -39,41 +41,34 @@ namespace HSApp
             PopulateForm();
         }
 
-        private void TeachMatForm_Load(object sender, EventArgs e)
+        private void TimetableForm_Load(object sender, EventArgs e)
         {
             refreshData();
             PopulateForm();
         }
 
-        
-        
         private void refreshData()
         {
-            Mdata.DataSource = dm.toDataTable(conn.getMaterial());
+            Timedata.DataSource = dm.toDataTable(conn.getTime());
         }
 
         private void PopulateForm()
         {
-            if (Mdata.Rows.Count > 0)
+            if (Timedata.Rows.Count > 0)
             {
-                Matid.Text = Mdata.SelectedCells[0].Value.ToString();
-
-                Mname.Text = Mdata.SelectedCells[1].Value.ToString();
-
-
-
+                TimeID.Text = Timedata.SelectedCells[0].Value.ToString();
+                TimeName.Text = Timedata.SelectedCells[1].Value.ToString();
             }
 
 
 
         }
 
-        private void Mdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void Timedata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
             PopulateForm();
         }
-
+        
         private void btnUP_Click(object sender, EventArgs e)
         {
             Byte[] bytes;
@@ -81,18 +76,18 @@ namespace HSApp
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                openFileDialog.Filter = "Powerpoint files (*.pptx)|*.pptx | All Files (*.*)|*.*";
+                openFileDialog.Filter = "Word Document files (*.docx)|*.docx | All Files (*.*)|*.*";
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     var filename = openFileDialog.FileName;
                     bytes = File.ReadAllBytes(filename);
 
-                    Materials mt = new Materials();
-                    mt.MaterialName = openFileDialog.SafeFileName;
-                    mt.MaterialData = bytes;
+                    Timetable tm = new Timetable();
+                    tm.TimetableName = openFileDialog.SafeFileName;
+                    tm.TimetableData = bytes;
 
-                    conn.InsertFile(mt);
+                    conn.InsertTime(tm);
                     PopulateForm();
 
 
@@ -106,28 +101,28 @@ namespace HSApp
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            Materials downloadMaterial;
+            Timetable downloadTime;
             try
             {
-                downloadMaterial = conn.DownMaterials(Convert.ToInt32(Matid.Text));
+                downloadTime = conn.DownTime(Convert.ToInt32(TimeID.Text));
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                saveFileDialog.Title = "Save your materials";
-                saveFileDialog.FileName = downloadMaterial.MaterialName;
-                
+                saveFileDialog.Title = "Save your timetable";
+                saveFileDialog.FileName = downloadTime.TimetableName;
+
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     if (saveFileDialog.FileName != "")
                     {
-                        File.WriteAllBytes(saveFileDialog.FileName,downloadMaterial.MaterialData);
+                        File.WriteAllBytes(saveFileDialog.FileName, downloadTime.TimetableData);
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-            
+
 
 
 
@@ -135,9 +130,12 @@ namespace HSApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            conn.DeleteFile(Convert.ToInt32(Matid.Text));
+            conn.DeleteTime(Convert.ToInt32(TimeID.Text));
             PopulateForm();
         }
+
+
+
     }
 
 }

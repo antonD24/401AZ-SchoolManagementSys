@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HSApp.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,12 @@ namespace HSApp
         {
             TeachMatForm filesform = new TeachMatForm();
             filesform.Show();
+        }
+
+        private void TimeBtn_Click(object sender, EventArgs e)
+        {
+            TimetableForm timetable= new TimetableForm();
+            timetable.Show();
         }
     }
 }

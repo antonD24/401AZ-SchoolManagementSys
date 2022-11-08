@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.file = new System.Windows.Forms.Button();
+            this.TimeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,13 +165,23 @@
             // 
             // file
             // 
-            this.file.Location = new System.Drawing.Point(9, 40);
+            this.file.Location = new System.Drawing.Point(776, 12);
             this.file.Name = "file";
-            this.file.Size = new System.Drawing.Size(75, 49);
+            this.file.Size = new System.Drawing.Size(96, 49);
             this.file.TabIndex = 141;
             this.file.Text = "Teaching Materials";
             this.file.UseVisualStyleBackColor = true;
             this.file.Click += new System.EventHandler(this.file_Click);
+            // 
+            // TimeBtn
+            // 
+            this.TimeBtn.Location = new System.Drawing.Point(776, 76);
+            this.TimeBtn.Name = "TimeBtn";
+            this.TimeBtn.Size = new System.Drawing.Size(96, 41);
+            this.TimeBtn.TabIndex = 142;
+            this.TimeBtn.Text = "Timetables";
+            this.TimeBtn.UseVisualStyleBackColor = true;
+            this.TimeBtn.Click += new System.EventHandler(this.TimeBtn_Click);
             // 
             // Class
             // 
@@ -178,6 +189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(884, 611);
+            this.Controls.Add(this.TimeBtn);
             this.Controls.Add(this.file);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button6);
@@ -217,5 +229,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button file;
+        private System.Windows.Forms.Button TimeBtn;
     }
 }

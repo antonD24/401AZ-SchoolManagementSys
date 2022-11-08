@@ -25,6 +25,15 @@ DELIMITER ;
 CALL sp_GetFiles(1);
 
 DELIMITER //
+CREATE PROCEDURE sp_DownFiles(id INT)
+BEGIN 
+	SELECT * FROM tbl_Files WHERE File_id = id;
+END//
+DELIMITER ;
+
+CALL sp_DownFiles(1);
+
+DELIMITER //
 CREATE PROCEDURE sp_InsertFile(Fname VARCHAR(60), FData LONGBLOB)
 BEGIN 
 	INSERT INTO tbl_Files(FileName,FileData) VALUES (Fname,FData);

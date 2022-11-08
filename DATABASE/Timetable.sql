@@ -31,7 +31,7 @@ BEGIN
 END//
 DELIMITER ;
 
-CALL sp_InsertFile();
+CALL sp_InsertTime();
 
 DELIMITER //
 CREATE PROCEDURE sp_DeleteTime(id INT)

@@ -8,32 +8,31 @@ using System.Threading.Tasks;
 
 namespace HSApp.Connectors
 {
-    internal class MaterialConn
+    internal class TimeConn
     {
-
         private string connString = "Server= database401az.c24bjpnpsv1x.us-east-1.rds.amazonaws.com; User ID = admin; Password=02041957; Database=H_SEducateDB";
 
-        public List<Materials> getMaterial()
+        public List<Timetable> getTime()
         {
-            List<Materials> mat = new List<Materials>();
+            List<Timetable> tm = new List<Timetable>();
             using (var conn = new MySqlConnection(connString))
             {
                 conn.Open();
 
-                using (var cmd = new MySqlCommand("CALL sp_getFiles()", conn))
+                using (var cmd = new MySqlCommand("CALL sp_ViewTime()", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
-                        mat.Add(new Materials
+                        tm.Add(new Timetable
                         {
-                            Material_ID = reader.GetInt32(0),
-                            MaterialName = reader.GetString(1),
+                            Timetable_ID = reader.GetInt32(0),
+                            TimetableName = reader.GetString(1),
 
 
                         });
                     }
             }
-            return mat;
+            return tm;
 
 
 
@@ -41,7 +40,7 @@ namespace HSApp.Connectors
 
 
 
-        async public void InsertFile(Materials mt)
+        async public void InsertTime(Timetable tm)
         {
             using (var conn = new MySqlConnection(connString))
             {
@@ -49,49 +48,51 @@ namespace HSApp.Connectors
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "CALL sp_InsertFile(@p1,@p2)";
-                    cmd.Parameters.AddWithValue("p1", mt.MaterialName);
-                    cmd.Parameters.AddWithValue("p2", MySqlDbType.VarBinary).Value = mt.MaterialData;
-                    
+                    cmd.CommandText = "CALL sp_InsertTime(@p1,@p2)";
+                    cmd.Parameters.AddWithValue("p1", tm.TimetableName);
+                    cmd.Parameters.AddWithValue("p2", MySqlDbType.VarBinary).Value = tm.TimetableData;
+
                     await cmd.ExecuteNonQueryAsync();
                 }
             }
         }
 
-        public Materials DownMaterials(int Mid)
+        public Timetable DownTime(int TimeID)
         {
-            Materials mat = new Materials();
+            Timetable tm = new Timetable();
             using (var conn = new MySqlConnection(connString))
             {
                 conn.Open();
-                
+
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "CALL sp_DownFiles(@p1)";
-                    cmd.Parameters.AddWithValue("p1", Mid);
-                    
+                    cmd.CommandText = "CALL sp_GetTime(@p1)";
+                    cmd.Parameters.AddWithValue("p1", TimeID);
+
 
 
                     var reader = cmd.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            mat.Material_ID = reader.GetInt32(0);
-                            mat.MaterialName = reader.GetString(1);
-                            mat.MaterialData = (byte[]) reader.GetValue(2);
-                        }
+                    while (reader.Read())
+                    {
+                        tm.Timetable_ID = reader.GetInt32(0);
+                        tm.TimetableName = reader.GetString(1);
+                        tm.TimetableData = (byte[])reader.GetValue(2);
+                    }
                 }
-                
-                
-            
-            
-            }
-            return mat;
 
+
+
+
+            }
+
+
+            return tm;
 
         }
+        
 
-        async public void DeleteFile(int fileID)
+        async public void DeleteTime(int TmID)
         {
             using (var conn = new MySqlConnection(connString))
             {
@@ -99,9 +100,9 @@ namespace HSApp.Connectors
                 using (var cmd = new MySqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "CALL sp_DeleteFile(@p1)";
-                    cmd.Parameters.AddWithValue("p1", fileID);
-                    
+                    cmd.CommandText = "CALL sp_DeleteTime(@p1)";
+                    cmd.Parameters.AddWithValue("p1", TmID);
+
 
                     await cmd.ExecuteNonQueryAsync();
                 }
@@ -110,6 +111,5 @@ namespace HSApp.Connectors
 
 
     }
-
-
 }
+
