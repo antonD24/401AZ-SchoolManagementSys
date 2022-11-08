@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connectors\ClassConn.cs" />
     <Compile Include="Connectors\MaterialConn.cs" />
     <Compile Include="Connectors\TimeConn.cs" />
     <Compile Include="Forms\Addresses.cs">

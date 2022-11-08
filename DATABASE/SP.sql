@@ -326,7 +326,7 @@ INNER JOIN tbl_Courses ON tbl_Enrollments.Course_id = tbl_Courses.Course_id ;
 END//
 DELIMITER ;
 
-CALL sp_getEnrollment(1);
+CALL sp_getEnrollment();
 
 DELIMITER //
 CREATE PROCEDURE sp_InsertEnrollment(ES_id INT, EC_id INT, EDATE DATE)
@@ -399,7 +399,7 @@ INNER JOIN tbl_Files ON tbl_Class.File_id = tbl_Files.File_id;
 END//
 DELIMITER ;
 
-CALL sp_getClass(1);
+CALL sp_getClass();
 
 DELIMITER //
 CREATE PROCEDURE sp_InsertClass(CRoom VARCHAR(10),CTeacher INT, CEnroll INT,Ctime INT, Cfile INT)
@@ -410,7 +410,7 @@ BEGIN
 END//
 DELIMITER ;
 
-CALL sp_InsertEnrollment("R21",1,1,1,1);
+CALL sp_InsertClass("R21",1,1,1,1);
 
 
 
@@ -429,7 +429,7 @@ BEGIN
 END//
 DELIMITER ;
 
-CALL sp_UpdateEnrollment("R5",2,3,1,2);
+CALL sp_UpdateClass("R5",2,3,1,2);
 
 DELIMITER //
 CREATE PROCEDURE sp_deleteClass(id INT)
