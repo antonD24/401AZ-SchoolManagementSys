@@ -64,15 +64,25 @@ namespace HSApp.Connectors
             using (var conn = new MySqlConnection(connString))
             {
                 conn.Open();
+                
+                using (var cmd = new MySqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "CALL sp_DownFiles(@p1)";
+                    cmd.Parameters.AddWithValue("p1", Mid);
+                    
 
-                using (var cmd = new MySqlCommand("CALL sp_getFiles()", conn))
-                using (var reader = cmd.ExecuteReader())
-                    while (reader.Read())
-                    {
-                        mat.Material_ID = reader.GetInt32(0);
-                        mat.MaterialName = reader.GetString(1);
-                        mat.MaterialData = (Byte[]) reader.GetValue(3);
-                    }
+
+                    var reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            mat.Material_ID = reader.GetInt32(0);
+                            mat.MaterialName = reader.GetString(1);
+                            mat.MaterialData = (byte[]) reader.GetValue(2);
+                        }
+                }
+                
+                
             
             
             }

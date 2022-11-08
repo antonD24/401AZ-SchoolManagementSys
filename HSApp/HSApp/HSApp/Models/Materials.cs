@@ -13,7 +13,7 @@ namespace HSApp.Models
 
         public string MaterialName { get; set; }
         
-        public Byte[] MaterialData { get; set; }
+        public byte[] MaterialData { get; set; }
 
 
     }

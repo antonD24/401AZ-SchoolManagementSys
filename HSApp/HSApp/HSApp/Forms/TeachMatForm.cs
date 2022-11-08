@@ -110,16 +110,24 @@ namespace HSApp
             try
             {
                 downloadMaterial = conn.DownMaterials(Convert.ToInt32(Matid.Text));
-                MessageBox.Show(downloadMaterial.MaterialName);
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                saveFileDialog.Title = "Save your materials";
+                saveFileDialog.FileName = downloadMaterial.MaterialName;
+                
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (saveFileDialog.FileName != "")
+                    {
+                        File.WriteAllBytes(saveFileDialog.FileName,downloadMaterial.MaterialData);
+                    }
+                }
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            saveFileDialog.Title = "Save your materials";
-            saveFileDialog.ShowDialog();
+            
 
 
 
