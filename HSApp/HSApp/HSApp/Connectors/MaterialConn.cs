@@ -58,5 +58,28 @@ namespace HSApp.Connectors
             }
         }
 
+        public Materials DownMaterials(int Mid)
+        {
+            Materials mat = new Materials();
+            using (var conn = new MySqlConnection(connString))
+            {
+                conn.Open();
+
+                using (var cmd = new MySqlCommand("CALL sp_getFiles()", conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        mat.Material_ID = reader.GetInt32(0);
+                        mat.MaterialName = reader.GetString(1);
+                        mat.MaterialData = (Byte[]) reader.GetValue(3);
+                    }
+            
+            
+            }
+            return mat;
+
+
+        }
+
     }
 }

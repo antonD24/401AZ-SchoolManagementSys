@@ -56,7 +56,7 @@ namespace HSApp
         {
             if (Mdata.Rows.Count > 0)
             {
-                Mid.Text = Mdata.SelectedCells[0].Value.ToString();
+                Matid.Text = Mdata.SelectedCells[0].Value.ToString();
 
                 Mname.Text = Mdata.SelectedCells[1].Value.ToString();
 
@@ -70,7 +70,7 @@ namespace HSApp
 
         private void Mdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            refreshData();
+            
             PopulateForm();
         }
 
@@ -104,7 +104,26 @@ namespace HSApp
 
         }
 
-        
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            Materials downloadMaterial;
+            try
+            {
+                downloadMaterial = conn.DownMaterials(Convert.ToInt32(Matid.Text));
+                MessageBox.Show(downloadMaterial.MaterialName);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            saveFileDialog.Title = "Save your materials";
+            saveFileDialog.ShowDialog();
+
+
+
+        }
     }
 
 }

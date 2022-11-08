@@ -32,7 +32,7 @@
             this.Mdata = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Mid = new System.Windows.Forms.TextBox();
+            this.Matid = new System.Windows.Forms.TextBox();
             this.Mname = new System.Windows.Forms.TextBox();
             this.btnUP = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
@@ -54,15 +54,13 @@
             // Mdata
             // 
             this.Mdata.AllowUserToAddRows = false;
-            this.Mdata.AllowUserToDeleteRows = false;
-            this.Mdata.AllowUserToResizeColumns = false;
-            this.Mdata.AllowUserToResizeRows = false;
             this.Mdata.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Mdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Mdata.Location = new System.Drawing.Point(12, 264);
             this.Mdata.Name = "Mdata";
+            this.Mdata.ReadOnly = true;
             this.Mdata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Mdata.Size = new System.Drawing.Size(460, 285);
             this.Mdata.TabIndex = 0;
@@ -88,13 +86,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Material Name:";
             // 
-            // Mid
+            // Matid
             // 
-            this.Mid.Enabled = false;
-            this.Mid.Location = new System.Drawing.Point(178, 80);
-            this.Mid.Name = "Mid";
-            this.Mid.Size = new System.Drawing.Size(100, 20);
-            this.Mid.TabIndex = 4;
+            this.Matid.Enabled = false;
+            this.Matid.Location = new System.Drawing.Point(178, 80);
+            this.Matid.Name = "Matid";
+            this.Matid.Size = new System.Drawing.Size(100, 20);
+            this.Matid.TabIndex = 4;
             // 
             // Mname
             // 
@@ -122,6 +120,7 @@
             this.btnDown.TabIndex = 7;
             this.btnDown.Text = "Download";
             this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnDelete
             // 
@@ -140,6 +139,7 @@
             this.btnRefresh.TabIndex = 9;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // TeachMatForm
             // 
@@ -152,7 +152,7 @@
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUP);
             this.Controls.Add(this.Mname);
-            this.Controls.Add(this.Mid);
+            this.Controls.Add(this.Matid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Mdata);
@@ -176,7 +176,7 @@
         private System.Windows.Forms.DataGridView Mdata;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox Mid;
+        private System.Windows.Forms.TextBox Matid;
         private System.Windows.Forms.TextBox Mname;
         private System.Windows.Forms.Button btnUP;
         private System.Windows.Forms.Button btnDown;
