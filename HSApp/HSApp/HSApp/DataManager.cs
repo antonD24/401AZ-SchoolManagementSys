@@ -35,3 +35,4 @@ namespace HSApp
 
     }
 }
+// DataManager used for arranging data in the tables inside the forms window

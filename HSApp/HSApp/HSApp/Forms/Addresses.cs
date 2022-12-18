@@ -15,7 +15,8 @@ namespace HSApp
     {
         DataManager dm;
         AddrConnector conn;
-
+        
+        //DataManager and the Connector classes are declared 
 
 
 
@@ -39,6 +40,8 @@ namespace HSApp
         private void refreshData()
         {
             dgvAddr.DataSource = dm.toDataTable(conn.getAddresses());
+            // the DataManager takes the data provided by the connector and gets displayed upon window load or 
+            // by using the refresh button that reloads the table and populates it with the most up-to-date data from the DB
         }
 
 
@@ -46,6 +49,7 @@ namespace HSApp
         {
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
+            // button used to bring up the Main Menu of the application for navigation between forms
         }
 
         private void PopulateForm()
@@ -58,6 +62,7 @@ namespace HSApp
                 addCity.Text = dgvAddr.SelectedCells[3].Value.ToString();
                 addPost.Text = dgvAddr.SelectedCells[4].Value.ToString();
             }
+            // this bit of code populates each text box with it's assigned cell if the row count is > 0
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -76,6 +81,9 @@ namespace HSApp
             addCity.Text = null;
             addPost.Text = null;
 
+            // clicking the Add button activates the text boxes and sets the to a null state 
+            // in which data can be entered
+            // also the add, refresh and delete buttons are disabled so that they can't interfere with the application while data is entered
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -91,6 +99,10 @@ namespace HSApp
             btnDel.Enabled = true;
             btnSUP.Enabled = false;
             PopulateForm ();
+
+            // the refresh buttons resets the buttons to their original state
+            // populates the form with the newest data available 
+            // populates the text boxes that also get disabled
             
         }
 
@@ -120,6 +132,8 @@ namespace HSApp
             PopulateForm();
 
         }
+        // the Save button triggers the InsertAddr method in the connector file, 
+        // taking the information entered in the text boxes and then writing it to the database
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -134,12 +148,17 @@ namespace HSApp
             btnRefresh.Enabled = false;
             btnDel.Enabled = false;
         }
+        // after selecting a row and clicking the Update button 
+        // the text boxes become available allowing for data editing 
 
         private void dgvAddr_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
             PopulateForm();
             btnDel.Enabled = true;
+
+            // upon clicking on a cell, the whole row is highlighted
+            // populates the text boxes and enables the Delete button
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -157,7 +176,11 @@ namespace HSApp
                 catch (Exception ex)
                 {
                     MessageBox.Show("Unable to delete, Please check data or internet connection" + ex);
-                }
+                }   
+                // clicking the delete button displays a dialog window asking to confirm the action
+                // after confirmation the "DeleteAddr" method is triggered int the connector that calls the stored procedure in the 
+                // database and deletes the information
+
             }
             
             
@@ -192,7 +215,8 @@ namespace HSApp
             PopulateForm();
         }
     }
-
+        // after editing the data in the fields clicking the "Save" button the the method in the connector is triggered
+        // the stored procedure is called and the iformation is overwritten in the table stored in the database
 }
 
         

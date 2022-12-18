@@ -41,7 +41,7 @@ namespace HSApp.Connectors
 
 
 
-        async public void InsertFile(Materials mt)
+        async public void InsertFile(Materials mt) //method for uploading an entire file to the DB 
         {
             using (var conn = new MySqlConnection(connString))
             {
@@ -58,7 +58,7 @@ namespace HSApp.Connectors
             }
         }
 
-        public Materials DownMaterials(int Mid)
+        public Materials DownMaterials(int Mid) //method for downloading a selected file from the DB on local storage
         {
             Materials mat = new Materials();
             using (var conn = new MySqlConnection(connString))

@@ -32,5 +32,4 @@ C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.CoursesF
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.EnrollmentsForm.resources
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.SubjectsForm.resources
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.TeachMatForm.resources
-C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Forms.Timetables.resources
 C:\Users\david\Documents\GitHub\401AZ\HSApp\HSApp\HSApp\obj\Debug\HSApp.Forms.TimetableForm.resources

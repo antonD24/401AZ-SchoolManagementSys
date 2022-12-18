@@ -19,6 +19,10 @@ namespace HSApp.Models
         public string TeacherFName { get; set; }
 
         public string TeacherLname { get; set; }
+
+        /* Since C# does not support INHERITANCE of multiple Classes,
+         * Interfaces can be used to simulate INHERITANCE and achieve INNER JOINS for the information in our tables.
+         */
         
         private Enrollments _erollments = new Enrollments();
         public int EnrollmentID { get; set; }
