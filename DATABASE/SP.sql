@@ -89,7 +89,7 @@ DELIMITER //
 CREATE PROCEDURE sp_InsertStudent(Sfname VARCHAR(20), Slname VARCHAR(20), SDOB DATE, Sgender VARCHAR(15),SEmail VARCHAR(40),SPhone VARCHAR(15) ,Saddr INT )
 
 BEGIN 
-	INSERT INTO tbl_Students VALUES (0,Sfname, Slname, SDOB, Sgender,Saddr,SEmail,SPhone);
+	INSERT INTO tbl_Students VALUES (0,Sfname, Slname, SDOB, Sgender,SEmail,SPhone,Saddr);
 END//
 DELIMITER ;
 
@@ -98,7 +98,7 @@ CALL sp_InsertStudent("Jake", "Smith",'2001-4-24',"ac@gmail.com","07235352", "Ma
 
 
 DELIMITER //
-CREATE PROCEDURE sp_UpdateStudents(id INT,Sfname VARCHAR(20), Slname VARCHAR(20), SDOB DATE, Sgender VARCHAR(15), SEmail VARCHAR(40), SPhone VARCHAR(15))
+CREATE PROCEDURE sp_UpdateStudents(id INT,Sfname VARCHAR(20), Slname VARCHAR(20), SDOB DATE, Sgender VARCHAR(15), SEmail VARCHAR(40), SPhone VARCHAR(15),Saddr INT)
 
 BEGIN 
 	UPDATE tbl_Students
@@ -108,7 +108,8 @@ BEGIN
 		stu_DOB = SDOB,
 		stu_Gender = Sgender,
 		stu_Email = SEmail,
-		stu_Phone = SPhone
+		stu_Phone = SPhone,
+		Addr_id = Saddr
 	WHERE Student_id = id;
 END//
 DELIMITER ;
@@ -150,7 +151,7 @@ DELIMITER //
 CREATE PROCEDURE sp_InsertTeacher(Tfname VARCHAR(20), Tlname VARCHAR(20), TDOB DATE, Tgender VARCHAR(15),TEmail VARCHAR(40),TPhone VARCHAR(15), Taddr INT )
 
 BEGIN 
-	INSERT INTO tbl_Teachers (FirstName,LastName,DOB,Gender,Email,Phone,Addr_id) VALUES (0,Tfname, Tlname, TDOB, Tgender,TEmail,TPhone,0);
+	INSERT INTO tbl_Teachers VALUES (0,Tfname, Tlname, TDOB, Tgender,TEmail,TPhone,Taddr);
 END//
 DELIMITER ;
 
@@ -316,7 +317,7 @@ DELIMITER ;
 CALL sp_getEnrollments();
 
 DELIMITER //
-CREATE PROCEDURE sp_getEnrollment(id INT)
+CREATE PROCEDURE sp_getEnrollment()
 BEGIN 
 SELECT tbl_Enrollments.Enrollment_id,tbl_Enrollments.DOE ,tbl_Enrollments.Student_id, tbl_Students.stu_FirstName, tbl_Students.stu_LastName, tbl_Courses.Course_id, tbl_Courses.Sub_id
 FROM tbl_Enrollments 
@@ -430,7 +431,7 @@ CREATE PROCEDURE sp_deleteClass(id INT)
 BEGIN 
 	DELETE FROM tbl_Class WHERE Class_id = id;
 END//
-DELIMITER ;
+DELIMITER ;tbl_Addresses
 
 CALL sp_deleteClass(2);
 

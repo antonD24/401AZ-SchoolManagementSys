@@ -10,7 +10,8 @@ namespace HSApp.Connectors
 {
     internal class ClassConn
     {
-        private string connString = "Server= database401az.c24bjpnpsv1x.us-east-1.rds.amazonaws.com; User ID = admin; Password=02041957; Database=H_SEducateDB";
+        private string connString = "Server= dbassign.csgx7vmsu0ih.us-east-1.rds.amazonaws.com; User ID = admin; Password=02041957; Database=HS_Educate";
+
         // Connection string that provides the necesarry server address and authentication and links the Forms application to the SQL Database hosted on AWS
 
         public List<CLASS> getClass()  // getClass method that uses a stored procedure in the DB to pull information

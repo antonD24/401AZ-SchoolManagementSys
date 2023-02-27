@@ -29,7 +29,7 @@ namespace HSApp
         private void btnStudent_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Students students = new Students();
+            StudentsForm students = new StudentsForm();
             students.Closed += (s, args) => this.Close();
             students.Show();
             

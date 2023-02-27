@@ -20,7 +20,7 @@ CREATE PROCEDURE sp_GetFiles(id INT)
 BEGIN 
 	SELECT * FROM tbl_Files WHERE File_id = id;
 END//
-DELIMITER;
+DELIMITER ;
 
 CALL sp_GetFiles(1);
 

@@ -10,7 +10,7 @@ namespace HSApp.Connectors
 {
     internal class EnrollConn
     {
-        private string connString = "Server= database401az.c24bjpnpsv1x.us-east-1.rds.amazonaws.com; User ID = admin; Password=02041957; Database=H_SEducateDB";
+        private string connString = "Server= dbassign.csgx7vmsu0ih.us-east-1.rds.amazonaws.com; User ID = admin; Password=02041957; Database=HS_Educate";
 
         public List<Enrollments> getEnrollment()
         {

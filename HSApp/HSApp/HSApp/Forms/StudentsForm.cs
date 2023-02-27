@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace HSApp
 {
-    public partial class Students : Form
+    public partial class StudentsForm : Form
     {
         DataManager dm;
         StudentConn conn;
         
 
-        public Students()
+        public StudentsForm()
         {
             InitializeComponent();
             dm = new DataManager();

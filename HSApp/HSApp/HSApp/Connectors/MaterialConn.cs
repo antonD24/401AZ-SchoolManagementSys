@@ -11,7 +11,7 @@ namespace HSApp.Connectors
     internal class MaterialConn
     {
 
-        private string connString = "Server= database401az.c24bjpnpsv1x.us-east-1.rds.amazonaws.com; User ID = admin; Password=02041957; Database=H_SEducateDB";
+        private string connString = "Server= dbassign.csgx7vmsu0ih.us-east-1.rds.amazonaws.com; User ID = admin; Password=02041957; Database=HS_Educate";
 
         public List<Materials> getMaterial()
         {
@@ -20,7 +20,7 @@ namespace HSApp.Connectors
             {
                 conn.Open();
 
-                using (var cmd = new MySqlCommand("CALL sp_getFiles()", conn))
+                using (var cmd = new MySqlCommand("CALL sp_ViewFiles()", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
